@@ -1,0 +1,1401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>黎跃春区块链博客</title>
+    <description>黎跃春，江湖人称春哥，孔壹学院、链乎创始人 &amp; CEO，全球区块链职业教育布道师，通信和信息技术培养工程区块链高级授课专家。</description>
+    <link>http://liyuechun.org/</link>
+    <atom:link href="http://liyuechun.org/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 30 Jan 2018 19:53:53 +0800</pubDate>
+    <lastBuildDate>Tue, 30 Jan 2018 19:53:53 +0800</lastBuildDate>
+    <generator>Jekyll v3.5.1</generator>
+    
+      <item>
+        <title>【李程】区块链演进及跨域安全解决方案</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;作者：李程，前联想、百度高级安全工程师，搜狗安全架构师，区块链底层开发者、架构师。&lt;/p&gt;
+
+  &lt;p&gt;原文链接：&lt;a href=&quot;https://github.com/xianlimei/liaixian11030/wiki/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%BC%94%E8%BF%9B%E5%8F%8A%E8%B7%A8%E5%9F%9F%E5%AE%89%E5%85%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88&quot;&gt;https://github.com/xianlimei/liaixian11030/wiki&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/wiki/xianlimei/liaixian11030/39.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;说区块链域安全之前，笔者介绍下区块链相关技术背景，现在很多人只识比特币，不识区块链。&lt;/p&gt;
+
+&lt;h1 id=&quot;一区块链发展的演变&quot;&gt;一、区块链发展的演变&lt;/h1&gt;
+
+&lt;p&gt;回首2008年，由次贷危机引发的金融危机蔓延全球，11月份，一篇名为《Bitcoin:A peer-to-peer electronic cash system》的论文横空出世，当时只是在一小戳圈子里被讨论，大概没几个人知道论文的意义。时间的年轮很快转入新的一年，比特币第一版本代码发布，1月4日，创世块被挖出来，5天之后，第二个块产生，比特币网络正式启动，一个自称“中本聪”的人悄悄在互联网应用这片汪洋大海吹起一片涟漪，时至今日，这片涟漪已形成滔滔大浪。&lt;/p&gt;
+
+&lt;p&gt;Blockchain V1.0主要应用于比特币和大型金融分类账，而Blockchain 2.0则在行业和应用领域获得动力和投资。然而，区块链从1.0向Blockchain 2.0的演变并不是一个简单的过程。这个转变的复杂性和挑战在下面描述的三个阶段被总结：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;I. 注册阶段&lt;/strong&gt;：首先要解决注册相关的问题。区块链是可信和可追溯的，因为它采用“工作证明算法”和其他公认的规则来确保只能添加​​合法的区块。一旦一个块经过彻底的验证链接到区块链，它将被永久保存。互联网上的本地台账链数据库永远不会被破坏，记录的信息字段与生成时间相匹配。可信账本链中的所有信息都是独特的，防篡改的。因此，区块链可以用来记录各种类型的信息。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;II 验证阶段&lt;/strong&gt;：第二个改进方面是准确的验证。区块链是开放源代码和可共享的，允许各种组织和个人进入整个系统的运作。参与维护的每个节点都会收到整个数据库的完整副本，以确保信息的所有权。区块链是存储永久记录（如真实性验证，土地所有权，股权交易和其他应用程序）的理想解决方案。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;III 管理阶段&lt;/strong&gt;：这使我们进入第三阶段。在这里，关注智能管理势在必行。区块链粉丝认为，区块链的核心贡献是解决多点信息交互过程中的任何可信度问题。这个问题或挑战被创造为“拜占庭将军的问题”。顾名思义，这个问题起源于罗马帝国和拜占庭帝国。鉴于帝国的广阔领土，帝国军将领在地理上分离，难以互动。军队中还有叛徒，会误导将军的决定，阻止他们争取胜利。由于缺乏准确的信息，这使得难以达成共识。&lt;/p&gt;
+
+&lt;p&gt;现在已经进入Blockchain 3.0时代，Blockchain 3.0仍然侧重于其衍生领域的应用和规范。区块链3.0的区别特点是引入了一个分散的域名系统 - Namecoin。下面介绍Namecoin及其功能及其挑战和应用的简要说明：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/wiki/xianlimei/liaixian11030/40.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;什么是Namecoin？&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Namecoin提供的功能类似于传统DNS提供商提供的功能。主要区别在于Namecoin基于分散式区块链技术。正因为如此，Namecoin可以绕过互联网审查，确保信息的自由和中立的分布。&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Namecoin的特点&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;在Namecoin中，没有可以改变域名的权力机构。例如，美国政府控制.com域名的DNS提供商，并且能够审查在该域名下注册的网站。然而，名称币对应于.bit域名，它不受任何机构的控制。该域名永久写入区块链，确保在网站上免费发布信息。&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Namecoin的运作原理&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Namecoin通过点对点网络共享DNS查询表。只要有人正在运行Namecoin服务器应用程序，域名就可以访问，并且不受任何人的控制。&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Namecoin的应用领域&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;由于.bit域名可以用来绕开监督和审查，所以适合自由和合法地传播信息。基于分散域名思想的应用程序Namecoin是首批将区块链技术应用于非货币领域的应用程序之一。这些应用程序拥有很高的研究价值。尽管意识形态可以应用于各个领域，但是目前有一些限制使它们不能普及。&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Namecoin的主要限制&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;大多数浏览器默认不支持解析.bit网址，用户需要安装一个插件才能访问.bit网站。这个问题将阻止大多数用户访问.bit网站，使其难以普及。匿名，低成本和对审查的豁免使Namecoin容易被误用。用户可以使用.bit来托管非法内容或企业，不会受到法律后果。此外，中国的网站必须备案。由于.bit网站不能在中国录制，因此在国内无法使用。&lt;/code&gt;
+***&lt;/p&gt;
+
+&lt;h1 id=&quot;二区块链算法的演进&quot;&gt;二、区块链算法的演进&lt;/h1&gt;
+
+&lt;p&gt;区块链的技术演进，从另一个层次看，也是算法的不断优化以及完善，Consensus和Algorithm可以说是区块链技术体系里的重要支柱。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;hash算法&lt;/strong&gt;，为什么呢，中本聪在设计比特币的时候其实有很多地方用到Hash函数，比如计算区块ID，计算交易ID，构造代币地址等。我们说的算法具体是指用何种Hash函数计算区块ID，所谓算法创新也就是在这个地方下功夫。反正现在只要一出什么山寨币就说自己发明了什么算法云云之类的话，笔者不妄下断言了^_^。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;sha256算法&lt;/strong&gt;，除了生成地址中有一个环节使用了REPID-160算法，比特币系统中但凡有需要做Hash运算的地方都是用SHA256。随着比特币被更多人了解，大家开始好奇中本聪为何选择了SHA256，同时对SHA256的安全性发表各种意见，SHA256妥妥经受了质疑，到目前为止，没有公开的证据表明SHA256有漏洞，SHA256依然牢牢抗住保卫比特币安全的大旗。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;scrypt算法&lt;/strong&gt;，后来随着显卡挖矿以及矿池的出现，社区开始担心矿池会导致算力集中，违背中本聪“一CPU一票”的最初设计理念。在那段时间，中心化的焦虑非常严重，讨论很激烈，比特币一次又一次“被死亡”，直到现在，针对矿池是否违背去中心化原则的争论仍在继续。无论如何，有人将矛头指向SHA256，认为是算法太容易导致矿机和矿池出现，并试图寻找更难的算法。恰逢其时，使用SCRYPT算法的莱特币（Litecoin）横空出世。据说SCRYPT是由一位著名的黑客开发，由于没有得到诸如SHA系列的严格的安全审查和全面论证，一直没被广泛推广使用。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;串联算法&lt;/strong&gt;，2013年7月，夸克币（Quark）发布，首创使用多轮Hash算法，看似高大上，其实很简单，就是对输入数据运算了9次hash函数，前一轮运算结果作为后一轮运算的输入。这9轮Hash共使用6种加密算法，分别为BLAKE, BMW, GROESTL, JH, KECCAK和SKEIN，这些都是公认的安全Hash算法，并且早已存在现成的实现代码。这种多轮Hash一出现就给人造成直观上很安全很强大的感觉，追捧者无数。现今价格依然坚挺的达世币（DASH，前身是暗黑币，Darkcoin，）接过下一棒，率先使用11种加密算法（BLAKE, BMW, GROESTL, JH, KECCAK, SKEIN, LUFFA, CUBEHASH, SHAVITE, SIMD, ECHO），美其名曰X11，紧接着X13，X15这一系列就有人开发出来了。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;并联算法&lt;/strong&gt;，有人串联，就有人并联，Heavycoin（HVC）率先做了尝试。HVC如今在国内名不见经传，当时还是名噪一时，首次实现链上游戏，作者是俄罗斯人，后来不幸英年早逝，在币圈引起一阵惋惜。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;primecoin算法&lt;/strong&gt;，正当一部分人在算法探索之路上进行的如火如荼之时，另一部分人的声音也非常刺耳，那就是指责POW浪费能源（彼时POS机制已经实现）。POW党虽极力维护，但也承认耗费能源这一事实。这一指责打开了另一条探索之路，即如果能找到一种算法，既能维护区块链安全，这些Hash运算又能在其他方面产生价值，那简直更完美。在这条探索之路上最让人振奋人心的成果来自于Sunny King（这大神之前已经开发了Peercoin，点点币）发明的素数币（Primecoin）。素数币算法的核心理念是：在做Hash运算的同时寻找大素数。素数如今已被广泛应用于各个领域，但人类对他的认识还是有限。素数在数轴上不但稀有（相对于偶数而言），而且分布不规律，在数轴上寻找素数只能盲目搜索探测，这正是POW的特征。POW还有另一个要求是容易验证，这方面人类经过几百年探索已经获得一些成果。素数币使用两种方法测试，首先进行费马测试（Fermat Test），通过则再进行欧拉-拉格朗日-立夫习兹测试（Euler-Lagrange-Lifchitz Test），还通过测试则被视为是素数。需要指出的是，这种方法并不能保证通过测试的数百分百是素数，不过这并不影响系统运行，即便测试结果错误，只要每个节点都认为是素数就行。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ethash算法&lt;/strong&gt;，以太坊（Ethereum）一开始就打算使用POS方式，但由于POS设计存在一些问题，开发团队决定在以太坊1.0阶段使用POW方式，预计在Serenity阶段转入POS。以太坊POW算法叫Ethash，虽只是一个过渡算法，但开发团队一点也不含糊，一如既往发扬其“简单问题复杂化，繁琐细节秀智商”的设计风格。Ethash 是最新版本的 Dagger-Hashimoto改良算法，是Hashimoto算法结合Dagger算法产成的一个新变种。Ethash设计时就明确两大目标：&lt;/p&gt;
+
+&lt;p&gt;1）抵御矿机性能（ASIC-resistance），团队希望CPU也能参与挖矿获得收益。&lt;/p&gt;
+
+&lt;p&gt;2）轻客户端可快速验证（Light client verifiability）。&lt;/p&gt;
+
+&lt;p&gt;基于以上两个目标，开发团队最后倒腾出来的Ethash挖矿时基本与CPU性能无关，却和内存大小和内存带宽成正相关。不过在实现上还是借鉴了SHA3的设计思路，但是使用的”SHA3_256” ,”SHA3_512”与标准实现很不同。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ethash算法&lt;/strong&gt;，基本流程是这样的：对于每一个块，首先计算一个种子（seed），该种子只和当前块的信息有关；然后根据种子生成一个32M的随机数据集（Cache）；紧接着根据Cache生成一个1GB大小的数据集合（DAG），DAG可以理解为一个完整的搜索空间，挖矿的过程就是从DAG中随机选择元素（类似于比特币挖矿中查找合适Nonce）再进行哈希运算。可以从Cache快速计算DAG指定位置的元素，进而哈希验证。此外还要求对Cache和DAG进行周期性更新，每1000个块更新一次，并且规定DAG的大小随着时间推移线性增长，从1G开始，每年大约增长7G左右。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;equihash算法&lt;/strong&gt;，最近在国内发展势头最猛的莫过于Zcash，该币种最大的特点是使用零知识证明实现隐私交易。距离发布还有几天，但从社区讨论来看，各方矿工都已在磨刀霍霍。Zcash对于算法的选择非常慎重，在先后考量了SHA256D，SCRYPT，CUCKOO HASH以及LYRA2等算法后，最终选择Equihash。Equihash算法由Alex Biryukov 和 Dmitry Khovratovich联合发明，其理论依据是一个著名的计算法科学及密码学问题——广义生日悖论问题。Equihash是一个内存（ARM）依赖型算法，机器算力大小主要取决于拥有多少内存，根据两位发明者的论文描述，该算法执行至少需要700M内存，1.8 GHz CPU计算30秒，经Zcash项目优化后，目前每个挖矿线程需要1G内存，因此Zcash官方认为该算法在短时间内很难出现矿机（ASIC）。此外，Zcash官方还相信该算法比较公平，他们认为很难有人或者机构能够对算法偷偷进行优化，因为广义生日悖论是一个已经被广泛研究的问题。此外，Equihash算法非常容易验证，这对于未来在受限设备上实现Zcash轻客户端非常重要。Zcash官方团队选择Equihash完全出于抵御矿机性能的需求，他们在官方博客中也承认并不敢确保Equihash一定是安全的，并表示如果发现Equihash存在问题，或者发现更优算法，Zcash会改变POW算法。&lt;/p&gt;
+
+&lt;p&gt;Blockchain 以后的发展肯定是越来越侧重于行业领域的发展而不仅仅是货币金融体系的发展，安全领域还没有人进行探索与实践，笔者先抛砖引玉，谈谈区块链在安全领域的应用。&lt;/p&gt;
+
+&lt;h1 id=&quot;三区块链域安全解决方案&quot;&gt;三、区块链域安全解决方案&lt;/h1&gt;
+&lt;p&gt;在区块链网络中，跨域保护的角色将由高安全性平台（称为高安全业务节点（HSBN））上安装的区块链网络对等执行。 分布式跨域区块链商业网络内的数据移动采取加密保护的事务更新的形式到由业务网络的特定成员专用信道中的每个节点持有的共享分类帐。区块链商业网络的其他对等节点驻留在一个或另一个安全区域，不管是高还是低，接收被批准的分类账交易的保护区块。 签署的分类账更新通过边界HSBN发生在对面的安全域上，以保证区块链提供的安全控制不能被绕过或覆盖。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/wiki/xianlimei/liaixian11030/41.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;四区块链域解决方案优点&quot;&gt;四、区块链域解决方案优点&lt;/h1&gt;
+
+&lt;p&gt;区块链跨领域解决方案可以提高您的信息交换过程中的效率，并改善信息交流的可访问性以及可追溯性。具体来说，它提供了：&lt;/p&gt;
+
+&lt;p&gt;1、无论网络域如何，每个资产在整个生命周期中都是单一的共享视图。在一个标准的跨域保护中，没有办法确保保护的每一边驻留的信息在其生命周期中保持同步。保护的能见度和控制范围是有限的。在整个生命周期内对资产信息进行可审计控制和监督。共享分类账提供了一个确定的，不可改变的记录，即使是在网络安全领域，共享的内容和由谁分享的内容。这消除了试图追踪并将单独的仅保护数据流连接在一起的情况。&lt;/p&gt;
+
+&lt;p&gt;2、信息共享，而不仅仅是移动数据。数据控制和共享自然而然地通过共享账本作为正常区块链业务网络的一部分进行。传统的保护只是移动数据。将信息共享扩展到其他安全域可以通过部署额外的HSBN托管的节点和通道轻松完成。&lt;/p&gt;
+
+&lt;p&gt;3、降低成本，提高安全性。该技术利用现有开源区块链即可能实现，目前在做的商业的有IBM等企业。&lt;/p&gt;
+
+&lt;h1 id=&quot;五参考资料&quot;&gt;五、参考资料&lt;/h1&gt;
+
+&lt;p&gt;https://www.ibm.com/blogs/blockchain/2018/01/blockchain-as-a-cross-domain-security-solution/&lt;/p&gt;
+
+&lt;p&gt;https://www.qkldx.net/topic/457/&lt;/p&gt;
+
+&lt;p&gt;https://richtopia.com/emerging-technologies/blockchain-solutions-for-cyber-data-security&lt;/p&gt;
+
+&lt;p&gt;https://www.accenture.com/us-en/service-blockchain-security&lt;/p&gt;
+
+&lt;p&gt;https://www.hyperledger.org/&lt;/p&gt;
+
+&lt;p&gt;https://www.alibabacloud.com/blog/The-Evolution-of-Blockchain-Development_p73812&lt;/p&gt;
+
+&lt;p&gt;如有任何问题可以加&lt;code class=&quot;highlighter-rouge&quot;&gt;qq&lt;/code&gt;群&lt;code class=&quot;highlighter-rouge&quot;&gt;581076433&lt;/code&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 20 Jan 2018 00:00:00 +0800</pubDate>
+        <link>http://liyuechun.org/2018/01/20/blockchain-security/</link>
+        <guid isPermaLink="true">http://liyuechun.org/2018/01/20/blockchain-security/</guid>
+        
+        <category>区块链安全</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>人人网人人坊 RRCoin 白皮书PDF下载</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;hi，大家好，我是春哥，这两天人人网公司成立了RRCoin基金会，发布了RRCoin白皮书，股票大涨，下面是RRCoin白皮书，PDF完整版下载请在公众号回复&lt;code class=&quot;highlighter-rouge&quot;&gt;RRCoin&lt;/code&gt;自动获取下载链接。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050001.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050002.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050003.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050004.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050005.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050006.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050007.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050008.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050009.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050010.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050011.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050012.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050013.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050014.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050015.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050016.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050017.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050018.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050019.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050020.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050021.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/201801050022.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;获取完整下载链接&quot;&gt;获取完整下载链接&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;关注公众号回复&lt;code class=&quot;highlighter-rouge&quot;&gt;RRCoin&lt;/code&gt;自动获取PDF下载链接，或者关注区块链问答社区直接下载和互动。&lt;/strong&gt;，&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/%E5%85%AC%E4%BC%97%E5%8F%B7-%E7%9F%A5%E8%AF%86%E6%98%9F%E7%90%83.png&quot; alt=&quot;RRCoin白皮书PDF下载链接&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 05 Jan 2018 00:00:00 +0800</pubDate>
+        <link>http://liyuechun.org/2018/01/05/rrcoin-pdf/</link>
+        <guid isPermaLink="true">http://liyuechun.org/2018/01/05/rrcoin-pdf/</guid>
+        
+        <category>白皮书</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Filecoin 2017 Q4 Update</title>
+        <description>&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/filecoin-header-2017-q4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Dear Filecoin supporters, miners, users, investors, and broader community,&lt;/p&gt;
+
+&lt;p&gt;Since the completion of the token sale, we have been heads down turning Filecoin’s tremendous potential into reality – from implementing the core parts of the Filecoin protocol to growing our team with the best talent we can find. Below is an update from our team, as well as a set of specific “asks” for you, our community.&lt;/p&gt;
+
+&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-CommunityUpdates-an-Overview&quot;&gt;Community Updates - an Overview&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-Asks-How-You-Can-Help&quot;&gt;Asks - How You Can Help&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-Launch-of-the-Filecoin-Blog&quot;&gt;Launch of the Filecoin Blog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-Growth-and-Adoption-of-IPFS&quot;&gt;Growth and Adoption of IPFS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-Launch-of-the-SAFT-Project&quot;&gt;Launch of the SAFT project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6-Growing-the-Team&quot;&gt;Growing the Team&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7-Filecoin-Engineering-Development&quot;&gt;Filecoin Engineering &amp;amp; Development&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#8-Investor-SAFTs-and-Warnings&quot;&gt;Investor SAFTs and Warnings&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#9-CoinList&quot;&gt;CoinList&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#10-Clients-and-Miners&quot;&gt;Clients &amp;amp; Miners&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;1-community-updates---an-overview&quot;&gt;1. Community Updates - an Overview&lt;/h2&gt;
+&lt;p&gt;These updates will keep the Filecoin Community up to date on the progress of the Filecoin project and its &lt;a href=&quot;https://protocol.ai/projects/&quot;&gt;supporting projects&lt;/a&gt; (ie. &lt;a href=&quot;https://ipfs.io/&quot;&gt;IPFS&lt;/a&gt;, &lt;a href=&quot;https://libp2p.io/&quot;&gt;libp2p&lt;/a&gt;, &lt;a href=&quot;https://saftproject.com/&quot;&gt;the SAFT project&lt;/a&gt;, and others). We will also ask for your help. Keep an eye out for explicit “asks”, which highlight ways you can contribute to the success of Filecoin. We plan to broadcast these updates periodically – at least once a quarter, and in some cases more frequently. We will publish these to our new blog, and send them by email to our partners, investors, prospective users &amp;amp; miners, and general subscribers.&lt;/p&gt;
+
+&lt;p&gt;Finally, we strongly encourage an open line of communication, with any suggestions, ideas, questions, feedback, or other thoughts. Please use this suggestion form or email us at team@filecoin.io with your comments. With thousands of people involved, we may take some time to respond, but we will read your note. This year, as our team’s capacity grows and we get closer to a testnet launch, we will open official community forums where the discussion can blossom broadly.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-asks---how-you-can-help&quot;&gt;2. Asks - How You Can Help&lt;/h2&gt;
+&lt;p&gt;We have a unique opportunity to leverage the collective knowledge, capabilities, and networks of our formidable community to accelerate the success of Filecoin. We will be asking for your help along several dimensions: research problems, development and testing, organization building, partnerships, recruiting, and more.&lt;/p&gt;
+
+&lt;p&gt;Here are some top priorities that our community can help us with in the short-term:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Refer candidates to hire (see list of high priority open positions in item 6 below)&lt;/li&gt;
+  &lt;li&gt;Refer potential early storage users (Filecoin Early Users form)&lt;/li&gt;
+  &lt;li&gt;Refer potential early miners (Filecoin Early Mining form)&lt;/li&gt;
+  &lt;li&gt;Ideas, Suggestions, anything else? Please fill out our suggestion form&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Asks like these are typical in updates to project supporters, though perhaps more typical in private communications. We choose to publish these broadly, as we believe everybody in our community can contribute tremendously to the success of Filecoin, and it is in our shared interest to do so. The success of Filecoin will benefit all our community – miners, clients, partners, users, researchers, investors, developers, and more. Naturally, we require more from groups who have made strong commitments – such as developers and investors – but we want everybody to feel invited and empowered to help!&lt;/p&gt;
+
+&lt;h2 id=&quot;3-launch-of-the-filecoin-blog&quot;&gt;3. Launch of the Filecoin Blog&lt;/h2&gt;
+&lt;p&gt;This update marks the launch of the new Filecoin Blog. We have cross-posted all Filecoin specific posts from the Protocol Labs Blog, which we had been using to publish Filecoin news. Henceforth, this will be the main channel for Filecoin announcements.&lt;/p&gt;
+
+&lt;p&gt;We have lots of plans for this blog in 2018. Expect to see technical deep-dives, explainers, event announcements, periodic updates like this one, and more. If you would like to request certain kinds of posts, feel free to send us suggestions.&lt;/p&gt;
+
+&lt;h2 id=&quot;4-growth-and-adoption-of-ipfs&quot;&gt;4. Growth and Adoption of IPFS&lt;/h2&gt;
+&lt;p&gt;IPFS and Filecoin are complementary protocols: IPFS addresses and moves content, and Filecoin is the missing incentive structure. Continued development of IPFS provides an important support layer for the Filecoin Protocol and continued adoption of IPFS signals increasing market demand for a faster, safer, decentralized storage service.&lt;/p&gt;
+
+&lt;p&gt;Over the past few months the IPFS Community and the IPFS Network have made great strides. There were major releases for both go-ipfs (0.4.11, 0.4.12, 0.4.13) and js-ipfs (0.26.0, 0.27.0). People continue to build exciting apps on IPFS. For example, OpenBazaar shipped their 2.0 release, powered by IPFS, and grew their network to 25,000 nodes. There is a new integration of IPFS directly in the Brave browser. Computes are building a distributed supercomputer with IPFS. Researchers in Australia have put Hadoop on IPFS for peer-to-peer data analytics. It keeps getting easier to build applications like these. PeerPad is an open source app (in alpha) that shows how developers can use IPFS to build their own serverless, real-time, offline-first collaborative dapps. Cloudy is a GNU/Linux distribution built around decentralization and community networks. More and more projects in the blockchain ecosystem rely on IPFS and libp2p. New such projects include: DTube, a decentralized video platform; Bloom, a decentralized credit scoring system; Decentraland, a virtual reality platform; and more. We have also seen IPFS appear in important sociopolitical issues. When the Spanish government blocked access to information about the independence referendum in Catalonia, activists used IPFS to distribute censorship-resistant websites with sample ballots and lists of polling locations.&lt;/p&gt;
+
+&lt;p&gt;IPFS continues to grow steadily, serve larger sets of users and more kinds of applications. But there is a lot more work to do to enable people and communities worldwide to control what data is stored on their machines and on their networks. The IPFS maintainers and the broader IPFS community are tackling that work with verve. Many IPFS developers eagerly await the arrival of Filecoin, which will enable large-scale decentralized storage for IPFS applications.&lt;/p&gt;
+
+&lt;h2 id=&quot;5-launch-of-the-saft-project&quot;&gt;5. Launch of the SAFT Project&lt;/h2&gt;
+&lt;p&gt;Over the past year we’ve dedicated a significant amount of energy and resources to develop a framework for legally compliant token sales. While the Filecoin Sale was the first use of that framework, we formally launched the SAFT Project in October - a collaboration between Protocol Labs, Cooley, and many other token creators, legal experts, and investors. Our goal is to approach legal protocol development the same way we approach software protocol development: with a thoughtful community, strong goals, and rigorous work. We hope our efforts will save creators much of the current headache, uncertainty, and cost associated with raising money for token networks.&lt;/p&gt;
+
+&lt;p&gt;The reception and adoption has been tremendous. SAFTs have been used by token creators and investors to transact in dozens of token sales. It is estimated that close to or more than half a billion dollars has been transacted with SAFTs and recent regulatory action is congruent with the SAFT framework’s assessments. To find out more visit the SAFT Project Website and Github, or review some recent press from CoinDesk, CoinCenter, Forbes and The Economist.&lt;/p&gt;
+
+&lt;h2 id=&quot;6-growing-the-team&quot;&gt;6. Growing the Team&lt;/h2&gt;
+&lt;p&gt;Ambitious projects like Filecoin succeed or fail depending on their teams. One of our top priorities – in the past, present, and future – is to grow our team with brilliant, masterful, hardworking people who share our vision and mission. Our recruiting is focused on strengthening the core engineering, research, and business development teams, as well as filling a few key operational roles.&lt;/p&gt;
+
+&lt;p&gt;Our network is large thanks to you. We need your help sourcing as many excellent candidates for our open positions. As a distributed team, we hire anywhere in the world, and at various levels of experience (entry, senior, staff, etc). We look for people with unique perspectives and diverse backgrounds. If you – or someone you know – may be a good fit, please apply.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Software Engineer, Distributed Systems&lt;/li&gt;
+  &lt;li&gt;Software Engineer, Peer-to-Peer Networks&lt;/li&gt;
+  &lt;li&gt;Software Engineer, Blockchain&lt;/li&gt;
+  &lt;li&gt;Software Engineer, Infrastructure and Devops&lt;/li&gt;
+  &lt;li&gt;Software Engineer, Testing&lt;/li&gt;
+  &lt;li&gt;Software Engineer, Security&lt;/li&gt;
+  &lt;li&gt;Software Engineer, Cryptography&lt;/li&gt;
+  &lt;li&gt;Software Engineer, Frontend&lt;/li&gt;
+  &lt;li&gt;Research Scientist, Cryptography&lt;/li&gt;
+  &lt;li&gt;Research Scientist, Distributed Systems&lt;/li&gt;
+  &lt;li&gt;Research Scientist, Networking&lt;/li&gt;
+  &lt;li&gt;Open Source Project Manager&lt;/li&gt;
+  &lt;li&gt;Open Source Product Manager&lt;/li&gt;
+  &lt;li&gt;User Experience Designer&lt;/li&gt;
+  &lt;li&gt;U.S. Legal Counsel&lt;/li&gt;
+  &lt;li&gt;Legal Project Manager&lt;/li&gt;
+  &lt;li&gt;Head of Finance&lt;/li&gt;
+  &lt;li&gt;Investor Relations Manager&lt;/li&gt;
+  &lt;li&gt;Asset Manager&lt;/li&gt;
+  &lt;li&gt;Communications Lead&lt;/li&gt;
+  &lt;li&gt;People Ops Coordinator&lt;/li&gt;
+  &lt;li&gt;…and more.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For a full list, please visit our current openings page. Please take a moment to share these role(s) with your network or email us with suggestions. We must cast a wide net in order to find the best candidates, and you can help us significantly in this effort.&lt;/p&gt;
+
+&lt;h2 id=&quot;7-filecoin-engineering--development&quot;&gt;7. Filecoin Engineering &amp;amp; Development&lt;/h2&gt;
+&lt;p&gt;We have been hard at work on implementing the Filecoin Protocol. Filecoin builds on the strong foundations laid by IPFS, libp2p, and Ethereum. This means a large number of very difficult pieces are already implemented, and we can focus on connecting these battle-tested components.&lt;/p&gt;
+
+&lt;p&gt;The bulk of our implementation work involves building and testing new Filecoin-specific parts, which are still monumental endeavors. This includes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the Filecoin Blockchain data structures and algorithms.&lt;/li&gt;
+  &lt;li&gt;the State Tree, which represents all world state for files, accounts, and contracts on Filecoin.&lt;/li&gt;
+  &lt;li&gt;the core contracts that will manage file Storage, Repair, Retrieval, and Mining.&lt;/li&gt;
+  &lt;li&gt;contract execution itself, optimized for Filecoin.&lt;/li&gt;
+  &lt;li&gt;library contracts for user agents, data storage and exchange, and other protocols.&lt;/li&gt;
+  &lt;li&gt;low-level primitives such as Proofs-of-Replication and Proofs-of-Spacetime.&lt;/li&gt;
+  &lt;li&gt;the Filecoin mining protocol, sequential work, and consensus.&lt;/li&gt;
+  &lt;li&gt;economic structures, such as miner pledges, collaterals, storage and retrieval payments.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We invite anybody interested in any of these parts, both research and implementation, to contact us at team@filecoin.io, specially people with backgrounds in cryptography research or distributed systems implementation.&lt;/p&gt;
+
+&lt;h3 id=&quot;71-blockchain-ecosystem-rd&quot;&gt;7.1. Blockchain Ecosystem R&amp;amp;D&lt;/h3&gt;
+
+&lt;p&gt;We continue to review and be inspired by the excellent work of other protocols and the academic community. In particular, we are paying close attention to many interesting developments, which may improve Filecoin. Here are some examples:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Ethereum&lt;/strong&gt; has inspired lots of our work, and we are building with it. The list of things we leverage from Ethereum is long – the Blockchain state and execution models, the EVM, contract interfaces, and so on. Two recent interesting contributions are the addition of primitives required for zk-SNARKs directly to the EVM, and the exploration of WebAssembly as a compilation target (eWASM).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Zcash:&lt;/strong&gt; The Zcash team has been a leader in the development and application of zk-SNARKs, and is continuously pushing forward new research and improvements. Recent exciting developments include work on the BLS12-381 curve, and the Powers of Tau parameter generation ceremony.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Polkadot:&lt;/strong&gt; the team pursues many protocol and system improvements based on learnings from implementing Ethereum and many other protocols. One such decision: to formally distinguish and use hard-coding and soft-coding of core contracts where relevant, with a scheduled replacement (user space vs kernel space).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tezos:&lt;/strong&gt; we continue to study other VM and smart contract execution systems, especially those that aim towards formal verification. We applaud their work in this area, and continue to watch closely, as we believe blockchains desperately need programming languages with better properties (verifiability, stronger type systems, etc).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ethereum verification:&lt;/strong&gt; in the same vein, we are studying and experimenting with works that build safer languages on top of the EVM. There have been several promising papers, and we will be conducting evaluations and experiments in this area.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Of course&lt;/strong&gt;, we continue to leverage the improvements made by our teams and communities in the IPFS, libp2p, IPLD, and multiformats projects. These are also leveraged by other blockchain projects, which will build a stronger, more robust, and interoperable Web 3.0.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;STARKs and Bulletproofs:&lt;/strong&gt; it is a great time for verifiable computation. STARKs and Bulletproofs are two transparent non-interactive zero-knowledge proof systems, which Filecoin may use for some of its proof algorithms. We are exploring tradeoffs and constructions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;72-open-problems-and-rfps&quot;&gt;7.2 Open Problems and RFPs&lt;/h3&gt;
+&lt;p&gt;Early in 2018, we will launch listings of open problems and a Request-for-Proposal (RFP) program to inspire and support work. The Open Problem listing will give us a venue to draw attention to important directions for improvements – for Filecoin and blockchains in general. The RFPs will allow us to motivate and reward people who help us solve those problems and implement their solutions. Keep an eye out for announcements!&lt;/p&gt;
+
+&lt;h2 id=&quot;8-investor-safts-and-warnings&quot;&gt;8. Investor SAFTs and Warnings&lt;/h2&gt;
+&lt;p&gt;In October, all investor SAFTs were sent out by email. We heard some of these emails were caught in spam filters, so to avoid issues we will be re-sending them again soon. We have also added a cryptographic signature to the SAFTs that verifies its validity, so the new version you will receive will be the definitive one. For more information on how to treat SAFTs and how tokens will be issued, please read the sale completion post or email us at sale@filecoin.io.&lt;/p&gt;
+
+&lt;p&gt;Investor caution: during and after the Filecoin token sale we’ve seen several attempts to defraud investors from actors claiming to be selling Filecoin SAFTs or tokens. Similarly, we’ve seen unscrupulous exchanges listing Filecoin and Filecoin derivatives. Remember that the Filecoin token will not be live until network launch, and any exchange that lists Filecoin or IPFS tokens is likely fraudulent. We strongly recommend not trusting any exchange or entity who claims to be buying, selling, or trading Filecoin tokens or derivatives. We will announce here when the Filecoin Network and token go live, until then we strongly recommend staying away from such actors and exchanges.&lt;/p&gt;
+
+&lt;h2 id=&quot;9-coinlist&quot;&gt;9. CoinList&lt;/h2&gt;
+&lt;p&gt;We originally launched CoinList to make token-based fundraising easy and legally compliant. The platform innovated on many fronts. It developed new legal frameworks by introducing the SAFT instrument for the first time. It raised the bar for legal compliance. It introduced new payment options, accepting ETH, BTC, ZEC, and USD simultaneously. It incorporated security improvements, such as an IPFS-hosted HD Wallet verification tool. And it improved the investor experience through a modern user interface and structured email support.&lt;/p&gt;
+
+&lt;p&gt;The Filecoin sale proved the CoinList platform. Since then, the project has attracted new token creators looking to launch their projects and more investors looking to invest in crypto-assets. To give the platform the attention it deserves, Protocol Labs and AngelList spun out CoinList as its own separate company with a dedicated team. Since September, CoinList has already completed two more sales – Blockstack and PROPS – and has grown into the leading platform for token fundraising and investment.&lt;/p&gt;
+
+&lt;p&gt;During the transition, Filecoin SAFTs were temporarily removed from the CoinList platform, and will be added back in early 2018. For more information on CoinList, please visit coinlist.co.&lt;/p&gt;
+
+&lt;h2 id=&quot;10-clients-and-miners&quot;&gt;10. Clients and Miners&lt;/h2&gt;
+&lt;p&gt;Finally, the Filecoin Network is off to a very strong start. Tens of thousands of very enthusiastic early storage users and miners have already signed up for our early user and early miner programs. Currently we’re meeting with a small but wide-ranging subset of them, gathering insights to inform our design of onboarding experiences, market incentives, and more. Please spread the word on these forms – if you or someone you know are interested in becoming storage users or miners, notifying us sooner will help us plan with you.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;For interested storage users, fill out the Filecoin Early Users form.&lt;/li&gt;
+  &lt;li&gt;For interested miners, fill out the Filecoin Early Mining form.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thank you for all your support so far, and in the future. And thank you in advance for your referrals, ideas, and suggestions. Your help is critical to our progress.&lt;/p&gt;
+
+&lt;p&gt;All of us at Protocol Labs and the Filecoin Team wish you the best for the holidays, and for 2018, which should be a great year for all of us :)&lt;/p&gt;
+
+&lt;p&gt;The Filecoin Team&lt;/p&gt;
+
+&lt;p&gt;Protocol Labs&lt;/p&gt;
+
+&lt;h2 id=&quot;加入链乎问答社区&quot;&gt;加入链乎问答社区&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/zhishixingqiu.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 02 Jan 2018 00:00:00 +0800</pubDate>
+        <link>http://liyuechun.org/2018/01/02/Filecoin-2017-Q4-Update/</link>
+        <guid isPermaLink="true">http://liyuechun.org/2018/01/02/Filecoin-2017-Q4-Update/</guid>
+        
+        <category>IPFS</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Fabric 开发环境配置（2） - Ubuntu虚拟机和Mac/Windows主机如何实现文件共享</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://www.kongyixueyuan.com&quot;&gt;区块链技术视频：http://www.kongyixueyuan.com&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://liyuechun.org&quot;&gt;区块链技术博客：http://liyuechun.org&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;进区块链微信技术交流群，添加春哥微信：liyc1215&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;目录&quot;&gt;目录&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#1- VirtualBox虚拟机网络设置&quot;&gt;1. VirtualBox虚拟机网络设置&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-NAT-网络地址转换模式NAT-Network-Address-Translation&quot;&gt;1.1 NAT 网络地址转换模式(NAT,Network Address Translation)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12- Bridged-Adapter-桥接模式&quot;&gt;1.2 Bridged Adapter 桥接模式&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2- Mac/Windows和Ubuntu双向拷贝&quot;&gt;2. Mac/Windows和Ubuntu双向拷贝&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-文件共享&quot;&gt;3. 文件共享&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#31-Bridged-Adapter网络配置&quot;&gt;3.1 Bridged Adapter网络配置&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#32-在Ubuntu上安装Samba服务器&quot;&gt;3.2 在Ubuntu上安装Samba服务器&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#33-设置要共享的文件夹&quot;&gt;3.3 设置要共享的文件夹&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#34-在Ubuntu上配置Samba服务器&quot;&gt;3.4 在Ubuntu上配置Samba服务器&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#35-添加共享文件&quot;&gt;3.5 添加共享文件&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#36-Mac/Windows访问Ubuntu共享文件夹&quot;&gt;3.6 Mac/Windows访问Ubuntu共享文件夹&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-小结&quot;&gt;4. 小结&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在上一篇文档&lt;a href=&quot;http://liyuechun.org/2017/12/07/virtual_ubuntu/&quot;&gt;Fabric 开发环境配置（1） - Ubuntu操作系统安装配置&lt;/a&gt;中，我们介绍了&lt;code class=&quot;highlighter-rouge&quot;&gt;Mac/Windows&lt;/code&gt;如何安装虚拟机、如何在虚拟机中安装&lt;code class=&quot;highlighter-rouge&quot;&gt;Ubuntu&lt;/code&gt;操作系统以及如何安装配置搜狗输入法。&lt;/p&gt;
+
+&lt;p&gt;这篇文章，&lt;a href=&quot;http://liyuechun.org&quot;&gt;春哥&lt;/a&gt;将为大家介绍&lt;strong&gt;Ubuntu虚拟机和Mac/Windows主机如何实现文件共享&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;1-virtualbox虚拟机网络设置&quot;&gt;1. VirtualBox虚拟机网络设置&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;VirtualBox虚拟机网络设置一共有下面四种方式：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;1、&lt;code class=&quot;highlighter-rouge&quot;&gt;NAT&lt;/code&gt; 网络地址转换模式&lt;code class=&quot;highlighter-rouge&quot;&gt;(NAT,Network Address Translation) &lt;/code&gt;
+2、&lt;code class=&quot;highlighter-rouge&quot;&gt;Bridged Adapter&lt;/code&gt;桥接模式 
+3、&lt;code class=&quot;highlighter-rouge&quot;&gt;Internal&lt;/code&gt; 内部网络模式 
+4、&lt;code class=&quot;highlighter-rouge&quot;&gt;Host-only Adapter&lt;/code&gt; 主机模式&lt;/p&gt;
+
+&lt;p&gt;在本篇文章中，我主要介绍&lt;code class=&quot;highlighter-rouge&quot;&gt;NAT&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;Bridged Adapter&lt;/code&gt;两种模式。&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;NAT&lt;/code&gt;不能实现主机和虚拟机互通，&lt;code class=&quot;highlighter-rouge&quot;&gt;Bridged Adapter&lt;/code&gt;可以实现主机与虚拟机互通。&lt;/strong&gt; &lt;/p&gt;
+
+&lt;h3 id=&quot;11-nat-网络地址转换模式natnetwork-address-translation&quot;&gt;1.1 NAT 网络地址转换模式(NAT,Network Address Translation)&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;NAT&lt;/code&gt;模式是最简单的实现虚拟机上网的方式，你可以这样理解：&lt;code class=&quot;highlighter-rouge&quot;&gt;Vhost&lt;/code&gt;访问网络的所有数据都是由主机提供的，&lt;code class=&quot;highlighter-rouge&quot;&gt;Vhost&lt;/code&gt;并不真实存在于网络中，主机与网络中的任何机器都不能查看和访问到&lt;code class=&quot;highlighter-rouge&quot;&gt;Vhost&lt;/code&gt;的存在。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;虚拟机与主机关系：&lt;/strong&gt;只能单向访问，虚拟机可以通过网络访问到主机，主机无法通过网络访问到虚拟机。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;虚拟机与网络中其他主机的关系：&lt;/strong&gt;只能单向访问，虚拟机可以访问到网络中其他主机，其他主机不能通过网络访问到虚拟机。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;虚拟机与虚拟机之间的关系：&lt;/strong&gt;相互不能访问，虚拟机与虚拟机各自完全独立，相互间无法通过网络访问彼此。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;虚拟机的IP、网关、DNS&lt;/strong&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_16.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;NAT方案缺点：&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;由于虚拟机和主机IP不在同一个网段，所以主机没办法和虚拟机实现文件共享。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;12-bridged-adapter-桥接模式&quot;&gt;1.2 Bridged Adapter 桥接模式&lt;/h3&gt;
+
+&lt;p&gt;网桥模式是我最喜欢的用的一种模式，同时，模拟度也是相当完美。你可以这样理解，它是通过主机网卡，架设了一条桥，直接连入到网络中了。因此，它使得虚拟机能被分配到一个网络中&lt;strong&gt;独立的IP&lt;/strong&gt;，所有网络功能完全和在网络中的真实机器一样。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;虚拟机与主机关系：&lt;/strong&gt; 可以相互访问，因为虚拟机在真实网络段中有独立&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;，主机与虚拟机处于同一网络段中，彼此可以通过各自&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;相互访问。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;虚拟机与网络中其他主机关系：&lt;/strong&gt;可以相互访问，同样因为虚拟机在真实网络段中有独立&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;，虚拟机与所有网络其他主机处于同一网络段中，彼此可以通过各自&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;相互访问。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;虚拟机与虚拟机关系：&lt;/strong&gt; 可以相互访问。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;IP：&lt;/strong&gt;一般是&lt;code class=&quot;highlighter-rouge&quot;&gt;DHCP&lt;/code&gt;分配的，与主机的&lt;code class=&quot;highlighter-rouge&quot;&gt;本地连接&lt;/code&gt;的&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;是同一网段的。虚拟机就能与主机互相通信。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;笔记本已插网线时：&lt;/strong&gt;（若网络中有&lt;code class=&quot;highlighter-rouge&quot;&gt;DHCP&lt;/code&gt;服务器）主机与虚拟机会通过&lt;code class=&quot;highlighter-rouge&quot;&gt;DHCP&lt;/code&gt;分别得到一个&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;，这两个&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;在同一网段。 主机与虚拟机可以&lt;code class=&quot;highlighter-rouge&quot;&gt;ping&lt;/code&gt;通，虚拟机可以上互联网。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;笔记本没插网线时：&lt;/strong&gt;&lt;strong&gt;主机与虚拟机不能通信。&lt;/strong&gt;主机的&lt;code class=&quot;highlighter-rouge&quot;&gt;本地连接&lt;/code&gt;有红叉，就不能手工指定&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;。虚拟机也不能通过&lt;code class=&quot;highlighter-rouge&quot;&gt;DHCP&lt;/code&gt;得到&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;地址，手工指定&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;后，也无法与主机通信，因为主机无&lt;code class=&quot;highlighter-rouge&quot;&gt;IP。&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-macwindows和ubuntu双向拷贝&quot;&gt;2. Mac/Windows和Ubuntu双向拷贝&lt;/h2&gt;
+
+&lt;p&gt;默认情况下，虚拟机和主机之间的拷贝的数据不能直接粘贴，我们可以通过下面的设置来实现数据双向拷贝。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Virtual Box&lt;/code&gt;设置&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/WX20171208-151709@2x.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/WX20171208-151954@2x.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/install_tool.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;按照上面三个步骤设置完以后，接下来你就可以实现虚拟机与主机双向拷贝。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/%E4%B8%BB%E6%9C%BA%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%8F%8C%E5%90%91%E6%8B%B7%E8%B4%9D-iloveimg-compressed.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-文件共享&quot;&gt;3. 文件共享&lt;/h2&gt;
+
+&lt;p&gt;由于&lt;code class=&quot;highlighter-rouge&quot;&gt;NAT&lt;/code&gt;网络虚拟机和主机&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;地址不在同一个网段，因此需要通过&lt;code class=&quot;highlighter-rouge&quot;&gt;Bridged Adapter&lt;/code&gt;模式来实现虚拟机和主机在同一个局域网。&lt;/p&gt;
+
+&lt;h3 id=&quot;31-bridged-adapter网络配置&quot;&gt;3.1 &lt;code class=&quot;highlighter-rouge&quot;&gt;Bridged Adapter&lt;/code&gt;网络配置&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;连接网线,连接网线,连接网线&lt;/strong&gt;重要的事情别人说三遍，我习惯说四遍。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_20.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Bridged Adapter&lt;/code&gt;配置&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_23.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_24.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_25.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_26.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;地址查询，&lt;code class=&quot;highlighter-rouge&quot;&gt;ping&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_27.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_28.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/mac_ping_ubuntu.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;32-在ubuntu上安装samba服务器&quot;&gt;3.2 在Ubuntu上安装Samba服务器&lt;/h3&gt;
+
+&lt;p&gt;你可以很方便地在Ubuntu电脑上安装&lt;code class=&quot;highlighter-rouge&quot;&gt;Samba&lt;/code&gt;。安装前，请先更新系统以便安装任何可用的更新。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get update &amp;amp;&amp;amp; apt-get upgrade
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;然后按照这条命令安装&lt;code class=&quot;highlighter-rouge&quot;&gt;samba&lt;/code&gt;和少量所需的软件包：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install samba samba-common system-config-samba python-glade2 gksu
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;一旦安装完成&lt;code class=&quot;highlighter-rouge&quot;&gt;Samba&lt;/code&gt;服务器，就可以从图形界面配置&lt;code class=&quot;highlighter-rouge&quot;&gt;Samba&lt;/code&gt;来分享文件。&lt;/p&gt;
+
+&lt;h3 id=&quot;33-设置要共享的文件夹&quot;&gt;3.3 设置要共享的文件夹&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_35.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_36.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_37.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;34-在ubuntu上配置samba服务器&quot;&gt;3.4 在Ubuntu上配置Samba服务器&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_29.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_30.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_31.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_32.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_33.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_34.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;35-添加共享文件&quot;&gt;3.5 添加共享文件&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_38.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_39.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_40.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;36-macwindows访问ubuntu共享文件夹&quot;&gt;3.6 Mac/Windows访问Ubuntu共享文件夹&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_41.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_42.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_43.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_44.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171208_45.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/20171208173445.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-小结&quot;&gt;4. 小结&lt;/h2&gt;
+
+&lt;p&gt;本篇文章主要为大家介绍了VirtualBox虚拟机网络设置&lt;code class=&quot;highlighter-rouge&quot;&gt;NAT&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;Bridged Adapter 桥接模式&lt;/code&gt;之间的区别，如何配置&lt;code class=&quot;highlighter-rouge&quot;&gt;Bridged Adapter 桥接模式&lt;/code&gt;以实现主机和虚拟机之间在同一个局域网。&lt;code class=&quot;highlighter-rouge&quot;&gt;SMB&lt;/code&gt;服务器安装配置，数据共享相关设置。&lt;/p&gt;
+
+&lt;h2 id=&quot;5技术交流&quot;&gt;5、技术交流&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;区块链技术交流QQ群：&lt;code class=&quot;highlighter-rouge&quot;&gt;348924182&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;进微信群请加微信：&lt;code class=&quot;highlighter-rouge&quot;&gt;liyc1215&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;「区块链部落」官方公众号&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%83%A8%E8%90%BD.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 08 Dec 2017 00:00:00 +0800</pubDate>
+        <link>http://liyuechun.org/2017/12/08/mac-ubuntu-data-share/</link>
+        <guid isPermaLink="true">http://liyuechun.org/2017/12/08/mac-ubuntu-data-share/</guid>
+        
+        <category>Fabric</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Fabric 开发环境配置（1） - Ubuntu操作系统安装配置</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://www.kongyixueyuan.com&quot;&gt;区块链技术视频：http://www.kongyixueyuan.com&lt;/a&gt;
+&lt;a href=&quot;http://liyuechun.org&quot;&gt;区块链技术博客：http://liyuechun.org&lt;/a&gt;
+进区块链微信技术交流群，添加春哥微信：liyc1215&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;之前&lt;a href=&quot;http://liyuechun.org&quot;&gt;春哥&lt;/a&gt;给大家讲解周末班、公开课以及相关教程时，都是直接使用的&lt;code class=&quot;highlighter-rouge&quot;&gt;Mac OS&lt;/code&gt;，但是我发现&lt;code class=&quot;highlighter-rouge&quot;&gt;40%&lt;/code&gt;的学员用的是&lt;code class=&quot;highlighter-rouge&quot;&gt;Windows&lt;/code&gt;，从这篇文章开始，我将统一用&lt;code class=&quot;highlighter-rouge&quot;&gt;Ubuntu&lt;/code&gt;操作系统写教程、录制视频以及讲解课程。&lt;/p&gt;
+
+&lt;p&gt;这篇文章&lt;a href=&quot;http://liyuechun.org&quot;&gt;春哥&lt;/a&gt;主要为大家分享如何在&lt;code class=&quot;highlighter-rouge&quot;&gt;windows&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;Mac&lt;/code&gt;上安装虚拟机，如何通过虚拟机安装&lt;code class=&quot;highlighter-rouge&quot;&gt;Ubuntu&lt;/code&gt;操作系统，如何配置&lt;code class=&quot;highlighter-rouge&quot;&gt;搜狗&lt;/code&gt;拼音输入法。下篇将为大家分享&lt;code class=&quot;highlighter-rouge&quot;&gt;Fabric 开发环境配置（2） - 虚拟机和主机如何实现文件共享&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;目录&quot;&gt;目录&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#一、下载安装VirtualBox&quot;&gt;一、下载安装VirtualBox&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#二、安装Ubuntu操作系统&quot;&gt;二、安装Ubuntu操作系统&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#三、下篇预告&quot;&gt;三、下篇预告&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;一下载安装virtualbox&quot;&gt;一、下载安装VirtualBox&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;下载&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;移步到&lt;a href=&quot;https://www.virtualbox.org/wiki/Downloads&quot;&gt;https://www.virtualbox.org/wiki/Downloads&lt;/a&gt;网站，如下图所示，选择&lt;code class=&quot;highlighter-rouge&quot;&gt;Windows&lt;/code&gt;或者&lt;code class=&quot;highlighter-rouge&quot;&gt;Mac&lt;/code&gt;操作系统对应的安装包下载并安装。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/WX20171208-095849@2x.png&quot; alt=&quot;VirtualBox 下载安装&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;安装&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;根据不同的操作系统下载对应的版本，直接双击一步步按照提示安装即可。&lt;/p&gt;
+
+&lt;h2 id=&quot;二安装ubuntu操作系统&quot;&gt;二、安装Ubuntu操作系统&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;下载&lt;a href=&quot;https://pan.baidu.com/s/1kVlBMib&quot;&gt;Ubuntu操作系统镜像文件&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/WX20171208-102258@2x.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;按照步骤通过镜像安装操作系统&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1_1207_1.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1_1207_2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;选择一个内存大小，内存越大，速度越快&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1_1207_3.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1207_4.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1207_5.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1207_6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;虚拟硬盘大小设置&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1207_7.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1_1207_8.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1_1207_9.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1_1207_10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;放心，这里直接往下安装，不会删除你电脑的任何数据和文档&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1_1208_1.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1_1208_2.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1_1208_3.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1208_4.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1_1208_5.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1_1208_6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;打开浏览器安装Linux版的搜狗输入法&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1_1208_13.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1_1208_14.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;重启虚拟机&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1_1208_7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;三下篇预告&quot;&gt;三、下篇预告&lt;/h2&gt;
+
+&lt;p&gt;到这里相信大家已经在自己的电脑上成功安装虚拟机以及&lt;code class=&quot;highlighter-rouge&quot;&gt;linux&lt;/code&gt;操作系统，但是大家会发现一个问题，在我们的&lt;code class=&quot;highlighter-rouge&quot;&gt;linux&lt;/code&gt;中创建的一些文件和代码怎么直接拷贝到主机，或者说主机的一些文件和资料怎么和虚拟机共享呢，下一小节中，春哥将为大家分享&lt;code class=&quot;highlighter-rouge&quot;&gt;Fabric 开发环境配置（2） - 虚拟机和主机如何实现文件共享&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;四技术交流&quot;&gt;四、技术交流&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;区块链技术交流QQ群：&lt;code class=&quot;highlighter-rouge&quot;&gt;348924182&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;进微信群请加微信：&lt;code class=&quot;highlighter-rouge&quot;&gt;liyc1215&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;「区块链部落」官方公众号&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%83%A8%E8%90%BD.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 07 Dec 2017 00:00:00 +0800</pubDate>
+        <link>http://liyuechun.org/2017/12/07/virtual_ubuntu/</link>
+        <guid isPermaLink="true">http://liyuechun.org/2017/12/07/virtual_ubuntu/</guid>
+        
+        <category>Fabric</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>不管是链圈，还是币圈，你都应该了解矿工、加密货币、矿池生态系</title>
+        <description>&lt;p&gt;用电脑…挖矿？&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1214_01.png&quot; alt=&quot;电脑挖矿&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;所谓挖矿就是让电脑执行特定程序，迭代找出某个值&lt;code class=&quot;highlighter-rouge&quot;&gt;nonce&lt;/code&gt;代入符合&lt;code class=&quot;highlighter-rouge&quot;&gt;HashFunction（TXs+nonce）&amp;lt; TargetDifficulty&lt;/code&gt;的解来给自己「挖出」一些加密货币。&lt;code class=&quot;highlighter-rouge&quot;&gt;Bitcoin&lt;/code&gt;用的函数是两次的&lt;code class=&quot;highlighter-rouge&quot;&gt;SHA256&lt;/code&gt;，而&lt;code class=&quot;highlighter-rouge&quot;&gt;Ethereum&lt;/code&gt;则是使用自己发明的&lt;a href=&quot;https://github.com/ethereum/wiki&quot;&gt;Ethash&lt;/a&gt;算法。&lt;/p&gt;
+
+&lt;p&gt;挖矿的本质就像买乐透，尽管内存块奖励是先抢先赢，算力强的矿工也只是「较有机会」挖到矿，小矿工理论上仍能取得成比例的报酬。但随着全世界的人不断不断的投入资源、建置更多的挖矿设备，现在以个人之力挖到矿的机率已经非常非常小。&lt;/p&gt;
+
+&lt;p&gt;以&lt;code class=&quot;highlighter-rouge&quot;&gt;Ethereum&lt;/code&gt;为例，一张中高阶显卡每秒可以做三千万次&lt;code class=&quot;highlighter-rouge&quot;&gt;Hash&lt;/code&gt;，但挖到矿平均需要一千两百兆次的尝试&lt;code class=&quot;highlighter-rouge&quot;&gt;（2017/7/16）&lt;/code&gt;，算起来平均要&lt;code class=&quot;highlighter-rouge&quot;&gt;1.26&lt;/code&gt;年才会挖到一次，普通矿工根本没办法承受如此不稳定的收入。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;凭个人之力挖矿太看天吃饭，矿工们合起来建造了矿池。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1214_02.jpeg&quot; alt=&quot;孔壹学院&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;基本上，矿池要解决的是矿工收入不稳定的问题，它把散落的运算资源整合起来一起挖矿，挖到之后再按照每个矿工的贡献比例分钱下去，概念上就像集资包牌买乐透，用众人之力把收入的机率分布摊平。此外，矿池负责维护节点运作，矿工可以专心在运算上，也降低了挖矿的成本，矿池则收取少量手续费。&lt;/p&gt;
+
+&lt;p&gt;理想的矿池和矿工之间的分工大致是这样：矿池藉由连接内存块链网络的节点接收交易信息，产生待打包的内存块广播给矿工，并分配每个矿工负责寻找&lt;code class=&quot;highlighter-rouge&quot;&gt;nonce&lt;/code&gt;的范围。通常矿池会设定一个比较低的门坎，可能是实际&lt;code class=&quot;highlighter-rouge&quot;&gt;target difficulty&lt;/code&gt;的&lt;code class=&quot;highlighter-rouge&quot;&gt;1/1000000&lt;/code&gt;，矿工找到符合的&lt;code class=&quot;highlighter-rouge&quot;&gt;nonce&lt;/code&gt;就回报给矿池，矿池验算后就记录为一个&lt;code class=&quot;highlighter-rouge&quot;&gt;share&lt;/code&gt;，再用每个矿工提交的&lt;code class=&quot;highlighter-rouge&quot;&gt;share&lt;/code&gt;估算贡献比例。因为矿工已经筛选出一些不错的&lt;code class=&quot;highlighter-rouge&quot;&gt;nonce&lt;/code&gt;，矿池可以很容易的从中找出够小的值去符合真正挖矿的标准，层层过滤的过程和淘金矿倒有几分相似。&lt;/p&gt;
+
+&lt;p&gt;就像跟人包牌买乐透怕被独吞一样，难道矿池不担心矿工把可以挖到矿的&lt;code class=&quot;highlighter-rouge&quot;&gt;nonce&lt;/code&gt;私藏，只把挖不到但符合&lt;code class=&quot;highlighter-rouge&quot;&gt;share&lt;/code&gt;标准的&lt;code class=&quot;highlighter-rouge&quot;&gt;nonce&lt;/code&gt;交出来混钱吗？答案是否定的，因为在开始挖矿之前，我们要先决定好的那个&lt;code class=&quot;highlighter-rouge&quot;&gt;TXs&lt;/code&gt;交易纪录内存块里面，就会标示这个块的&lt;code class=&quot;highlighter-rouge&quot;&gt;miner&lt;/code&gt;是谁，所以当矿工对着矿池给好的数据做运算，找出来的&lt;code class=&quot;highlighter-rouge&quot;&gt;valid share&lt;/code&gt;就具有专一性，即使矿工真的找到某个符合&lt;code class=&quot;highlighter-rouge&quot;&gt;Hash（“TX”+nonce）&amp;lt;TargetDifficulty&lt;/code&gt;的值想要自己私藏拿去领赏，最后仍是矿池会收到钱，这个矿工还会少一个&lt;code class=&quot;highlighter-rouge&quot;&gt;share&lt;/code&gt;，理论上没有动机这么做。&lt;/p&gt;
+
+&lt;p&gt;矿池不担心矿工卷款潜逃，但要如何公平地分配收益仍是个困难的问题。目前比较常见的分润模式有：&lt;code class=&quot;highlighter-rouge&quot;&gt;PPS（Pay Per Share），PPLNS（Pay Per Last N Share），RBPPS（Round Base Pay Per Share）&lt;/code&gt;三种，各有优缺点和不同的风险承担角色。&lt;/p&gt;
+
+&lt;p&gt;采&lt;code class=&quot;highlighter-rouge&quot;&gt;PPS&lt;/code&gt;模式的矿池会在矿工每次提交&lt;code class=&quot;highlighter-rouge&quot;&gt;share&lt;/code&gt;的时候立刻认列，是最简单好懂的模式。每个&lt;code class=&quot;highlighter-rouge&quot;&gt;share&lt;/code&gt;的价格是预先决定并动态调整的，相当于矿池「买」了这个&lt;code class=&quot;highlighter-rouge&quot;&gt;share&lt;/code&gt;，矿工的收入稳定，而实际挖到的块多寡则由矿池概括承受，所以通常会抽取较高的手续费。&lt;/p&gt;
+
+&lt;p&gt;相较之下，&lt;code class=&quot;highlighter-rouge&quot;&gt;PPLNS&lt;/code&gt;模式只会在矿池确定有收入的时候才发钱。每次挖到矿会参照矿工前一段时间的&lt;code class=&quot;highlighter-rouge&quot;&gt;share&lt;/code&gt;数分配收益，波动由矿工和矿池共同承担，通常会用随时间递减的权重计算，收入较为平滑，但实作上会比较复杂一点。&lt;/p&gt;
+
+&lt;p&gt;至于&lt;code class=&quot;highlighter-rouge&quot;&gt;RBPPS&lt;/code&gt;则完全由矿工承担风险，它像&lt;code class=&quot;highlighter-rouge&quot;&gt;PPS&lt;/code&gt;一样实时认列，但不直接发钱，而是登记为一个&lt;code class=&quot;highlighter-rouge&quot;&gt;share&lt;/code&gt;，每次挖到块称为一个&lt;code class=&quot;highlighter-rouge&quot;&gt;round&lt;/code&gt;，再依照这个&lt;code class=&quot;highlighter-rouge&quot;&gt;round&lt;/code&gt;期间你占的&lt;code class=&quot;highlighter-rouge&quot;&gt;share&lt;/code&gt;比例分润，矿工收益完全看矿池出块是否稳定。&lt;/p&gt;
+
+&lt;p&gt;因为实作起来简单，&lt;code class=&quot;highlighter-rouge&quot;&gt;RBPPS&lt;/code&gt;是目前许多开源矿池采用的模式，但也存在着一些问题，对总算力低的矿池而言出块间隔长短并不稳定，随着矿工们的&lt;code class=&quot;highlighter-rouge&quot;&gt;share&lt;/code&gt;持续累积，继续挖矿的收益期望值会随着分母上升而递减，矿工有经济诱因在很久没出块时切到其他矿池挖矿，等本来的矿池出块后再切回来，但如果每个矿工都这么做，矿池就停摆了。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import random
+
+selfshare = 0.0
+totalshare = 0.0
+x=0.9
+y=0.09
+z=0.01
+selfreward=0.0
+poolreward=0.0
+
+for i in range(10000):
+	if totalshare &amp;lt;=1:
+		selfshare+=z
+		totalshare+=(y+z)
+		if random.random()&amp;lt;0.1:
+			selfreward+=5*0.1
+			poolreward+=5*0.9
+			selfshare=0
+			totalshare=0
+	else:
+		totalshare+=y
+		if random.random()&amp;lt;0.09:
+			selfreward+=5*selfshare/totalshare
+			poolreward+=5*(1-selfshare/totalshare)
+			selfshare=0
+			totalshare=0
+		else:
+			selfreward+=5*z/(z+x)
+
+print(selfreward)
+print(poolreward)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;此外，也有矿池采用类似线上游戏的&lt;code class=&quot;highlighter-rouge&quot;&gt;DKP&lt;/code&gt;制度，矿工每次挖到块会累积&lt;code class=&quot;highlighter-rouge&quot;&gt;credit&lt;/code&gt;，当有块挖出来的时候就由当时&lt;code class=&quot;highlighter-rouge&quot;&gt;credit&lt;/code&gt;最高的矿工全拿，并把他的&lt;code class=&quot;highlighter-rouge&quot;&gt;credit&lt;/code&gt;归零。但这种模式显然对小矿工不利，期望值算起来大矿工会拿到不符比例多的额外收益。&lt;/p&gt;
+
+&lt;p&gt;总的来说，不同的分润模式都是在追求矿工收入稳定、公平、低矿池风险之间的权衡。大矿池有足够的资源请工程师优化系统，也较能提供矿工稳定的收入，小矿池则有灵活的优势，可以经营名气尚小的潜质币种。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;营运矿池的各种经济考察&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1214_03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;通常矿工在意的不外乎是矿池的手续费高低、收入波动、服务器稳定度三项重点。矿池收取的手续费除了要付维护系统跟电费的开支，还要在给矿工发薪水的时候承担链上&lt;code class=&quot;highlighter-rouge&quot;&gt;（on-chain）&lt;/code&gt;交易的手续费，所以一般会在累积到一大笔钱的时候再一次性支付。当矿池规模渐渐扩大的时候，光支付就会产生庞大的交易流量，常常处理不完造成堵车。&lt;/p&gt;
+
+&lt;p&gt;最近有&lt;code class=&quot;highlighter-rouge&quot;&gt;Ethereum&lt;/code&gt;矿池尝试用智能合约实现类似&lt;code class=&quot;highlighter-rouge&quot;&gt;Bitcoin&lt;/code&gt;单笔交易包含多地址支付的功能，但似乎会让交易所钱包辨识失败，猜测原因是因为底层节点&lt;code class=&quot;highlighter-rouge&quot;&gt;geth&lt;/code&gt;的监听功能&lt;code class=&quot;highlighter-rouge&quot;&gt;filter&lt;/code&gt;只会对交易的第一组地址有反应，导致后续的交易没被听见，以致于无法触发交易所入账的事件。满期待交易所能改一下构架，否则都不能用智能合约支付，对许多&lt;code class=&quot;highlighter-rouge&quot;&gt;Ethereum&lt;/code&gt;应用来说也挺困扰的。&lt;/p&gt;
+
+&lt;p&gt;目前已经可以在&lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub&lt;/code&gt;上找到几组开源的&lt;code class=&quot;highlighter-rouge&quot;&gt;矿池程序&lt;/code&gt;，稍有经验的人都能轻易的架起矿池。但尽管架池简单，经营倒挺困难，要找到足够的矿工和算力加入才能确保收入稳定。比起矿工是单纯的设备成本收入考察，经营矿池有时候更像在经营社群，需要培养一定的群众，提供不错的周边服务，才能让矿工愿意在收益变化的时候不至于军心溃散，肯留下来跟着矿池一起打拼。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/1215_04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;原文链接：&lt;code class=&quot;highlighter-rouge&quot;&gt;https://medium.com/taipei-ethereum-meetup/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3%E8%88%87%E4%BB%96%E5%80%91%E7%9A%84%E7%94%A2%E5%9C%B0-21a52c51427f&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;技术交流&quot;&gt;技术交流&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;区块链技术交流QQ群：&lt;code class=&quot;highlighter-rouge&quot;&gt;348924182&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;进微信群请加微信：&lt;code class=&quot;highlighter-rouge&quot;&gt;liyc1215&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;「区块链部落」官方公众号&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%83%A8%E8%90%BD.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 04 Dec 2017 00:00:00 +0800</pubDate>
+        <link>http://liyuechun.org/2017/12/04/token_pool/</link>
+        <guid isPermaLink="true">http://liyuechun.org/2017/12/04/token_pool/</guid>
+        
+        <category>挖矿</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>区块链工程师学习路线图</title>
+        <description>&lt;p&gt;大家都知道，学习任何一门新技术时，大家刚开始都会无从下手，不知道怎么入门，不知道学习顺序，不知道怎样去学，因此&lt;a href=&quot;http://liyuechun.org&quot;&gt;春哥&lt;/a&gt;特意整理了这一张&lt;code class=&quot;highlighter-rouge&quot;&gt;区块链工程师学习路线图&lt;/code&gt;，供大家学习参考。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;大家可关注公众号，实时查看最新版本的学习路线图。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;作者：黎跃春，孔壹学院、BloggerChain创始人&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%9B%BE.png&quot; alt=&quot;区块链工程师学习路线图&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%9B%BE.png&quot; alt=&quot;区块链学习路线图&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
+        <link>http://liyuechun.org/2017/12/03/Blockchain_engineer_learning_roadmap/</link>
+        <guid isPermaLink="true">http://liyuechun.org/2017/12/03/Blockchain_engineer_learning_roadmap/</guid>
+        
+        <category>安全</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>以太坊Parity钱包合约漏洞</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;作者： Peter Lai&lt;/p&gt;
+
+  &lt;p&gt;原文地址：&lt;code class=&quot;highlighter-rouge&quot;&gt;https://medium.com/taipei-ethereum-meetup/parity-%E9%8C%A2%E5%8C%85%E5%90%88%E7%B4%84%E6%BC%8F%E6%B4%9E-43ed412ebcd2&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;还记得今年&lt;code class=&quot;highlighter-rouge&quot;&gt;7&lt;/code&gt;月&lt;code class=&quot;highlighter-rouge&quot;&gt;Parity&lt;/code&gt;钱包合约被找到漏洞，结果黑客偷走了将近&lt;code class=&quot;highlighter-rouge&quot;&gt;150,000&lt;/code&gt;个以太币，会发生是因为智能合约的&lt;code class=&quot;highlighter-rouge&quot;&gt;callback&lt;/code&gt;里使用了&lt;code class=&quot;highlighter-rouge&quot;&gt;delegatecall（msg.data）&lt;/code&gt;，这个函数会呼叫&lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt;中的函数并将&lt;code class=&quot;highlighter-rouge&quot;&gt;msg.sender&lt;/code&gt;设为原呼叫函数的地址，黑客利用这一点呼叫了&lt;code class=&quot;highlighter-rouge&quot;&gt;initWallet&lt;/code&gt;，这时你们可能会以为&lt;code class=&quot;highlighter-rouge&quot;&gt;Parity&lt;/code&gt;应该有在&lt;a href=&quot;https://etherscan.io/tx/0x9dbf0326a03a2a3719c27be4fa69aacc9857fd231a8d9dcaede4bb083def75ec&quot;&gt;initWallet&lt;/a&gt;设置条件阻挡黑客就不能呼叫，结果竟然是没有！所以黑客就成功并改变合约的拥有者，最后再把&lt;a href=&quot;https://etherscan.io/tx/0xeef10fc5170f669b86c4cd0444882a96087221325f8bf2f55d6188633aa7be7c&quot;&gt;以太币转走&lt;/a&gt;，细节的部分可以看&lt;a href=&quot;https://blog.zeppelin.solutions/on-the-parity-wallet-multisig-hack-405a8c12e8f7&quot;&gt;这篇文章&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Parity&lt;/code&gt;也在几天后&lt;a href=&quot;https://paritytech.io/blog/security-alert-high-2.html&quot;&gt;修复了这个问题&lt;/a&gt;，修复的方式就是在&lt;code class=&quot;highlighter-rouge&quot;&gt;init*&lt;/code&gt;函数加上&lt;code class=&quot;highlighter-rouge&quot;&gt;only_uninitialized modifier&lt;/code&gt;判断，当&lt;code class=&quot;highlighter-rouge&quot;&gt;m_numOwners &amp;gt; 0&lt;/code&gt;时这个函数就不能使用，这时应该会想说不会再有漏洞了吧，毕竟智能合约能操作以太币，谁知道……&lt;/p&gt;
+
+&lt;p&gt;就在前几天有人发布了新&lt;code class=&quot;highlighter-rouge&quot;&gt;issue&lt;/code&gt;说他不小心删除了钱包的合约，因为只有合约的拥有者可以删除，那么他到底怎么删除合约？可以看到&lt;a href=&quot;https://etherscan.io/address/0x863df6bfa4469f3ead0be8f9f2aae51c91a907b4&quot;&gt;钱包合约&lt;/a&gt;被删除前共有两笔交易，第一笔交易呼叫&lt;code class=&quot;highlighter-rouge&quot;&gt;initWallet&lt;/code&gt;并将合约的拥有者设为自己。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function initWallet(address[] _owners, uint _required, uint _daylimit) only_uninitialized {
+ initDaylimit(_daylimit);
+ initMultiowned(_owners, _required);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;交易结果：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Function: initWallet(address[] _owners, uint256 _required, uint256 _daylimit)
+MethodID: 0xe46dcfeb
+0:0000000000000000000000000000000000000000000000000000000000000060
+1:0000000000000000000000000000000000000000000000000000000000000000
+2:0000000000000000000000000000000000000000000000000000000000000000
+3:0000000000000000000000000000000000000000000000000000000000000001
+4:000000000000000000000000ae7168deb525862f4fee37d987a971b385b96952
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://etherscan.io/tx/0x47f7cff7a5e671884629c93b368cb18f58a993f4b19c2a53a8662e3f1482f690&quot;&gt;第二笔&lt;/a&gt;交易呼叫了&lt;code class=&quot;highlighter-rouge&quot;&gt;kill&lt;/code&gt;函数，而&lt;code class=&quot;highlighter-rouge&quot;&gt;kill&lt;/code&gt;函数呼叫了&lt;code class=&quot;highlighter-rouge&quot;&gt;suicide&lt;/code&gt;（&lt;a href=&quot;http://solidity.readthedocs.io/en/develop/introduction-to-smart-contracts.html#self-destruct&quot;&gt;selfdestruct&lt;/a&gt;函数的别称，功能是将合约程序从内存块链移除，并将合约剩馀的以太币转给参数的位置），钱包的程序就从内存块链上移除了。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function kill(address _to) onlymanyowners(sha3(msg.data)) external {
+ suicide(_to);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;交易結果：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Function: kill(address _to)
+MethodID: 0xcbf0b0c0
+0:000000000000000000000000ae7168deb525862f4fee37d987a971b385b96952
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;因为很多使用这个钱包的合约引入位置都写死导致很多合约不能运作，在&lt;a href=&quot;https://etherscan.io/address/0x3bfc20f0b9afcace800d73d2191166ff16540258&quot;&gt;Polkadot&lt;/a&gt;里第451行就将钱包合约地址写死：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;address constant _walletLibrary = 0x863df6bfa4469f3ead0be8f9f2aae51c91a907b4;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;因为所有逻辑判断都在钱包合约中，所以其他相依于钱包合约的现在以太币都被冻结，且看起来像这样（无法提款）：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;contract Wallet {
+    function () payable {
+          Deposit(...)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Parity&lt;/code&gt;官方还在了解可行的解决方案，如果想查询自己有没有被影响可以到这个网站。&lt;/p&gt;
+
+&lt;h2 id=&quot;如何预防&quot;&gt;如何预防&lt;/h2&gt;
+
+&lt;p&gt;这次的事件&lt;code class=&quot;highlighter-rouge&quot;&gt;Parity&lt;/code&gt;说明有两种预防方式。一种是智能合约不该有自杀的函数，这样即便黑客获得了权限也无法把合约移除。一种是有新的建议及改善时，要及时更新在线的合约或是找寻在线合约可能的漏洞，因为在这问题发生前，就有网友提议在合约部属时要自动呼叫&lt;code class=&quot;highlighter-rouge&quot;&gt;initWallet&lt;/code&gt;（&lt;a href=&quot;https://github.com/paritytech/contracts/pull/74#%20issuecomment-319892715&quot;&gt;pr&lt;/a&gt;）加强合约的安全。&lt;/p&gt;
+
+&lt;h2 id=&quot;如何取得冻结的资金&quot;&gt;如何取得冻结的资金&lt;/h2&gt;
+&lt;p&gt;目前没有其他方式可以取得冻结的资金，只能期待未来有相关的&lt;a href=&quot;https://github.com/ethereum/EIPs&quot;&gt;改善建议&lt;/a&gt;实作在以太坊，或是以太坊实行硬分叉回复状态到钱包合约删除之前。&lt;/p&gt;
+
+&lt;h2 id=&quot;技术交流&quot;&gt;技术交流&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;区块链技术交流QQ群：&lt;code class=&quot;highlighter-rouge&quot;&gt;348924182&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;进微信群请加微信：&lt;code class=&quot;highlighter-rouge&quot;&gt;liyc1215&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;「区块链部落」公众号&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%83%A8%E8%90%BD.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 02 Dec 2017 00:00:00 +0800</pubDate>
+        <link>http://liyuechun.org/2017/12/02/parity-Wallet-contract-loopholes/</link>
+        <guid isPermaLink="true">http://liyuechun.org/2017/12/02/parity-Wallet-contract-loopholes/</guid>
+        
+        <category>安全</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>【以太坊智能合约】Embark Framework 开发基础篇</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;作者： 黎跃春 
+微信：liyc1215（进微信群，加微信）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;在之前的文章中，我们看到了使用Solidity开发以太坊智能合约的所有基本知识。我们使用了以太坊钱包，我们能够轻松设置小型产品开发环境。我们会发现开始的时候很不错，但是如果我们想要更深入的话呢？我们要编写更大的应用程序，能够使用多个源文件。编写、测试、调试、使用版本控制系统，一次部署多个合约等等。&lt;/p&gt;
+
+&lt;p&gt;为了更深入，我们将使用Embark框架。 Embark框架很容易上手，并具有很多功能：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Blockchain (Ethereum)&lt;/li&gt;
+  &lt;li&gt;去中心化 Storage (IPFS)&lt;/li&gt;
+  &lt;li&gt;去中心化交流 (Whisper, Orbit)&lt;/li&gt;
+  &lt;li&gt;Web 技术&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;目录&quot;&gt;目录&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-安装-Embark-framework&quot;&gt;1. 安装 Embark framework&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-Embark-framework-Hello-World&quot;&gt;2. Embark framework Hello World&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#21-启动服务器和控制器&quot;&gt;2.1 启动服务器和控制器&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#22-终端读取和修改`storedData`的值&quot;&gt;2.2 终端读取和修改&lt;code class=&quot;highlighter-rouge&quot;&gt;storedData&lt;/code&gt;的值&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#23-Web端获取`storedData`的值&quot;&gt;2.3 Web端获取&lt;code class=&quot;highlighter-rouge&quot;&gt;storedData&lt;/code&gt;的值&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#24-Web端点击`Set-Value`修改`storedData`的值&quot;&gt;2.4 Web端点击&lt;code class=&quot;highlighter-rouge&quot;&gt;Set Value&lt;/code&gt;修改&lt;code class=&quot;highlighter-rouge&quot;&gt;storedData&lt;/code&gt;的值&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-小结&quot;&gt;3. 小结&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;1-安装-embark-framework&quot;&gt;1. 安装 Embark framework&lt;/h2&gt;
+
+&lt;p&gt;你可以在任何平台安装&lt;code class=&quot;highlighter-rouge&quot;&gt;Embark framework&lt;/code&gt;，下面是你需要安装的工具。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ethereum/go-ethereum/wiki/Building-Ethereum&quot;&gt;Geth:Ethereum 协议的官方go实现&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/download/&quot;&gt;NodeJS和NPM:JavaScript应用的运行时和包管理器&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如果你已经安装上面的工具，我们将使用&lt;code class=&quot;highlighter-rouge&quot;&gt;NPM&lt;/code&gt;来安装&lt;code class=&quot;highlighter-rouge&quot;&gt; embark framework&lt;/code&gt;。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;localhost:~ yuechunli$  npm -g install embark ethereumjs-testrpc
+/usr/local/bin/embark -&amp;gt; /usr/local/lib/node_modules/embark/bin/embark
+/usr/local/bin/testrpc -&amp;gt; /usr/local/lib/node_modules/ethereumjs-testrpc/build/cli.node.js
++ ethereumjs-testrpc@4.1.3
++ embark@2.5.2
+updated 2 packages in 42.504s
+
+
+   ╭─────────────────────────────────────╮
+   │                                     │
+   │   Update available 5.3.0 → 5.4.2    │
+   │     Run npm i -g npm to update      │
+   │                                     │
+   ╰─────────────────────────────────────╯
+
+localhost:~ yuechunli$ 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;2-embark-framework-hello-world&quot;&gt;2. Embark framework Hello World&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-启动服务器和控制器&quot;&gt;2.1 启动服务器和控制器&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Embark framework&lt;/code&gt;包含最基本能够用来部署并让我们容易理解它如何运作的&lt;code class=&quot;highlighter-rouge&quot;&gt;demo&lt;/code&gt;。打开终端，首先我们创建一个一个文件夹&lt;code class=&quot;highlighter-rouge&quot;&gt;embark_demo&lt;/code&gt;，切换到&lt;code class=&quot;highlighter-rouge&quot;&gt;embark_demo&lt;/code&gt;文件夹里面，通过&lt;code class=&quot;highlighter-rouge&quot;&gt;embark demo&lt;/code&gt;命令来创建&lt;code class=&quot;highlighter-rouge&quot;&gt;Embark framework&lt;/code&gt;的初始化项目。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;localhost:SmartContractDemo yuechunli$ ls
+BloggerCoin	EncryptedToken	HelloWorld
+localhost:SmartContractDemo yuechunli$ mkdir embark_demo
+localhost:SmartContractDemo yuechunli$ cd embark_demo/
+localhost:embark_demo yuechunli$ embark demo
+Initializing Embark Template....
+Installing packages.. this can take a few seconds
+Init complete
+
+App ready at embark_demo
+-------------------
+Next steps:
+-&amp;gt; cd embark_demo
+-&amp;gt; embark blockchain or embark simulator
+open another console in the same directory and run
+-&amp;gt; embark run
+For more info go to http://github.com/iurimatias/embark-framework
+localhost:embark_demo yuechunli$ ls
+embark_demo
+localhost:embark_demo yuechunli$ cd embark_demo/
+localhost:embark_demo yuechunli$ ls
+app			embark.json		package.json
+chains.json		node_modules		test
+config			package-lock.json
+localhost:embark_demo yuechunli$ 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;为了运行这个demo，我们得先通过&lt;code class=&quot;highlighter-rouge&quot;&gt;embark simulator&lt;/code&gt;启动&lt;code class=&quot;highlighter-rouge&quot;&gt;simulator&lt;/code&gt;。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;localhost:embark_demo yuechunli$ embark simulator
+localhost:embark_demo yuechunli$ embark simulator
+EthereumJS TestRPC v6.0.1 (ganache-core: 2.0.0)
+
+Available Accounts
+==================
+(0) 0x32b083632f44917e2e9125c3025a120c97bb9f8c
+(1) 0xe38af4e162a40d27c6f15e754be1a940ca6b41ab
+(2) 0x19f321c2a9f531cd11b45be37ea12b835390d816
+(3) 0x982eadda586d29e13b38d745d45dccd931a1b471
+(4) 0xb0b4422bfdf431f58df48d0645e8d933d9c7f81d
+(5) 0xd69080b8a458a3fbd3f354b16b2a5964178a2579
+(6) 0x87b394b8f8d7530cd677fdb8fb785aed0431146e
+(7) 0xc1da7d151ed95b616f8b67ed5ce4774525455ee0
+(8) 0xa1878496046ff767401cb768e352c407c7f53018
+(9) 0xd16faa875634d4fe88333555cd7dc9e8c22f3e2e
+
+Private Keys
+==================
+(0) a70c22b2e6fe5f44ca15b44883333ad551e22608953a5f16e44a8b616e151360
+(1) 73a0e9cf90828d1099e5c5ac513cb18b5b804be7278aebf9bb2db5602d0e36da
+(2) 1e083df4a9aa021e64b52318fd64ec8d5959018b2244856466dc5ea102fa2cf8
+(3) 74afaab038ec34c8ac18559a09888dbd4e057fdfa9f41e99a99bbb1fceb32bc7
+(4) 3f27399b396c4d4cacfca45bffb0ce67f1f141bc5202bcd38bf66a9f8213c922
+(5) 36e4b3bfab27957163165aa185fed01134d90a41d2dbaed88a9eeff7c7be4583
+(6) 94292f49bd516fecd6bf775b5057cd215bb159efbc808b4cf0cf04afcd43418b
+(7) d9d43481879b1f130379c26df5a32ded19aabe3812e46ba52ef8b163f858ce40
+(8) 61679bc6a888d5d76af56ffcfcd7383befd44032254e35272e1f227f12dd4016
+(9) a8ac9f59c020136da2933424bf0f196d0a42e4a7f5d1ec8b973ff4d8c6b68a6f
+
+HD Wallet
+==================
+Mnemonic:      soap idle agree episode breeze utility page drive dumb vibrant repeat potato
+Base HD Path:  m/44'/60'/0'/0/{account_index}
+
+Listening on localhost:8545**
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;simulator&lt;/code&gt;有两个优势&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;第一，它将在你的计算机上创建一个区块链(blockchain)，因此当你需要部署合约或者做其他交易时，你的计算机将能够挖矿(mine)。&lt;/li&gt;
+  &lt;li&gt;第二，你不需要下载所有的&lt;code class=&quot;highlighter-rouge&quot;&gt;Ethereum&lt;/code&gt;区块链，这样能节省你的空间。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;接下来我们重启一个终端通过&lt;code class=&quot;highlighter-rouge&quot;&gt;embark run&lt;/code&gt;命令来运行程序。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;localhost:embark_demo yuechunli$ embark run
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/embark%20run%20demo.png&quot; alt=&quot;embark run&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;元素解释：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;当前部署的合约和地址列表显示在&lt;code class=&quot;highlighter-rouge&quot;&gt;Embark&lt;/code&gt;演示的demo中只有一个简单的合约&lt;code class=&quot;highlighter-rouge&quot;&gt;SimpleStorage&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;SimpleStorage&lt;/code&gt;合约具有简单的任务：存储一个值，并使这个值可从外部读取。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:8000&lt;/code&gt;为当前UI前端的地址和端口。&lt;/li&gt;
+  &lt;li&gt;可以和你合约进行交互的控制台。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;22-终端读取和修改storeddata的值&quot;&gt;2.2 终端读取和修改&lt;code class=&quot;highlighter-rouge&quot;&gt;storedData&lt;/code&gt;的值&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;让我们用atom打开demo看看合约代码：&lt;/strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;simple_storage.sol&lt;/code&gt;文件在&lt;code class=&quot;highlighter-rouge&quot;&gt;app/contracts&lt;/code&gt;文件夹下面。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/simple_storage_sol.png&quot; alt=&quot;Embark 演示demo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;SimpleStorage&lt;/code&gt;这个合约中，有一个&lt;code class=&quot;highlighter-rouge&quot;&gt;storedData&lt;/code&gt;状态变量用于存储一个&lt;code class=&quot;highlighter-rouge&quot;&gt;uint无符号整型的值。&lt;/code&gt;因为前面我们已经启动了服务，并且已经将合约部署到了本地测试网络，所以我们可以切换到终端，在终端中通过&lt;code class=&quot;highlighter-rouge&quot;&gt;SimpleStorage.get()&lt;/code&gt;获取&lt;code class=&quot;highlighter-rouge&quot;&gt;storedData&lt;/code&gt;的值，通过&lt;code class=&quot;highlighter-rouge&quot;&gt;SimpleStorage.set(88)&lt;/code&gt;修改状态变量的值，操作如下图所示:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171122_10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;23-web端获取storeddata的值&quot;&gt;2.3 Web端获取&lt;code class=&quot;highlighter-rouge&quot;&gt;storedData&lt;/code&gt;的值&lt;/h3&gt;
+
+&lt;p&gt;浏览项目，不难发现，在&lt;code class=&quot;highlighter-rouge&quot;&gt;app&lt;/code&gt;这个文件夹中，除了&lt;code class=&quot;highlighter-rouge&quot;&gt;contracts&lt;/code&gt;文件夹外，还有&lt;code class=&quot;highlighter-rouge&quot;&gt;css&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;images&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;js&lt;/code&gt;等文件夹，它们包含了和区块链交互的&lt;code class=&quot;highlighter-rouge&quot;&gt;web app&lt;/code&gt;的源码。在浏览器中打开&lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:8000&lt;/code&gt;看看&lt;code class=&quot;highlighter-rouge&quot;&gt;Embark&lt;/code&gt;demo&lt;code class=&quot;highlighter-rouge&quot;&gt;web&lt;/code&gt;端的效果。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;默认端口为&lt;code class=&quot;highlighter-rouge&quot;&gt;8000&lt;/code&gt;，如果想修改端口可以到&lt;code class=&quot;highlighter-rouge&quot;&gt;config/webserver.json&lt;/code&gt;文件里面进行修改。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/WX20170928-205437@2x.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;下图是&lt;code class=&quot;highlighter-rouge&quot;&gt;WebApp&lt;/code&gt;效果图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/embark-yanshi.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;默认的初始值为&lt;code class=&quot;highlighter-rouge&quot;&gt;100&lt;/code&gt;，如果想在Web端点击&lt;code class=&quot;highlighter-rouge&quot;&gt;Get Value&lt;/code&gt;按钮获取值，当前的&lt;code class=&quot;highlighter-rouge&quot;&gt;MetaMask&lt;/code&gt;钱包必须和本地的区块链测试网络一致，本地测试网络的RPC地址和端口为：&lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:8545&lt;/code&gt;，所以需要在&lt;code class=&quot;highlighter-rouge&quot;&gt;MetaMask&lt;/code&gt;钱包中将测试网络切换到&lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:8545&lt;/code&gt;，然后点击&lt;code class=&quot;highlighter-rouge&quot;&gt;Get Value&lt;/code&gt;按钮，即可获得存储到区块链上的&lt;code class=&quot;highlighter-rouge&quot;&gt;storedData&lt;/code&gt;的值。【PS：从区块链获取值不需要花费gas，但是MetaMask钱包网络必须和区块链部署的网络是同一个测试网络。】&lt;/p&gt;
+
+&lt;h3 id=&quot;24-web端点击set-value修改storeddata的值&quot;&gt;2.4 Web端点击&lt;code class=&quot;highlighter-rouge&quot;&gt;Set Value&lt;/code&gt;修改&lt;code class=&quot;highlighter-rouge&quot;&gt;storedData&lt;/code&gt;的值&lt;/h3&gt;
+
+&lt;p&gt;目前我们的&lt;code class=&quot;highlighter-rouge&quot;&gt;MetaMask&lt;/code&gt;的&lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:8545&lt;/code&gt;测试网络中，钱包地址中默认的以太币为&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;，如下图所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171122_11.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果我们想在&lt;code class=&quot;highlighter-rouge&quot;&gt;Web端&lt;/code&gt;通过&lt;code class=&quot;highlighter-rouge&quot;&gt;Set Value&lt;/code&gt;按钮去修改&lt;code class=&quot;highlighter-rouge&quot;&gt;storedData&lt;/code&gt;的值，我们的&lt;code class=&quot;highlighter-rouge&quot;&gt;MetaMask&lt;/code&gt;账号里面必须得有以太币，那么，那么，那么……&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;如何获取以太币呢？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;在我们终端中通过&lt;code class=&quot;highlighter-rouge&quot;&gt;embark simulator&lt;/code&gt;启动时，会默认分配&lt;code class=&quot;highlighter-rouge&quot;&gt;10&lt;/code&gt;个钱包地点，并且每个账号里面的余额都默认为&lt;code class=&quot;highlighter-rouge&quot;&gt;100&lt;/code&gt;，我们在终端查询一下先：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171122_12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;下一步拷贝我们&lt;code class=&quot;highlighter-rouge&quot;&gt;MetaMask&lt;/code&gt;里面的钱包地址，在控制台执行下面的命令。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;count = web3.toWei(60,'ether');
+
+web3.eth.sendTransaction({from: '0xe38af4e162a40d27c6f15e754be1a940ca6b41ab',to: '0xF055775eBD516e7419ae486C1d50C682d4170645',value: count});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171122_16.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;⚠️：&lt;/strong&gt;我们在终端查询&lt;code class=&quot;highlighter-rouge&quot;&gt;0xe38af4e162a40d27c6f15e754be1a940ca6b41ab&lt;/code&gt;地址余额时，它比&lt;code class=&quot;highlighter-rouge&quot;&gt;40&lt;/code&gt;个以太币要少一些，原因是因为转账需要花手续费。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/Snip20171122_16%20%281%29.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如上图所示，&lt;code class=&quot;highlighter-rouge&quot;&gt;0xF055775eBD516e7419ae486C1d50C682d4170645&lt;/code&gt;账号已充值&lt;code class=&quot;highlighter-rouge&quot;&gt;60 ether&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;接下来我们就可以在&lt;code class=&quot;highlighter-rouge&quot;&gt;Web&lt;/code&gt;端调用&lt;code class=&quot;highlighter-rouge&quot;&gt;Set Value&lt;/code&gt;来修改&lt;code class=&quot;highlighter-rouge&quot;&gt;storedData&lt;/code&gt;的值，我们在Web端将其值修改为&lt;code class=&quot;highlighter-rouge&quot;&gt;520&lt;/code&gt;，然后再在终端查看一下&lt;code class=&quot;highlighter-rouge&quot;&gt;storedData&lt;/code&gt;的值是否被修改并且同步。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/xiugaivalue.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-小结&quot;&gt;3. 小结&lt;/h2&gt;
+
+&lt;p&gt;本篇文章主要是带大家初步认识&lt;code class=&quot;highlighter-rouge&quot;&gt;Embark framework&lt;/code&gt;，通过本篇文章，相信大家对&lt;code class=&quot;highlighter-rouge&quot;&gt;Embark framework&lt;/code&gt;框架有了初步的认识，知道如何安装&lt;code class=&quot;highlighter-rouge&quot;&gt;Embark framework&lt;/code&gt;环境，如何启动模拟器，如何运行程序，如何在控制台和合约实例交互。&lt;/p&gt;
+
+&lt;h2 id=&quot;4-参考文档&quot;&gt;4. 参考文档&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://solidity.readthedocs.io&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ethereumbuilders.gitbooks.io/guide/content/en/ethereum_javascript_api.html&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;web3js.readthedocs.io/en/1.0/index.html&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://ethereumdev.io/getting-started-with-embark-framework&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://embark.readthedocs.io/en/2.5.2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-技术交流&quot;&gt;5. 技术交流&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;区块链技术交流QQ群：348924182&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;「区块链部落」官方公众号&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%83%A8%E8%90%BD.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 30 Nov 2017 00:00:00 +0800</pubDate>
+        <link>http://liyuechun.org/2017/11/30/embark-basic/</link>
+        <guid isPermaLink="true">http://liyuechun.org/2017/11/30/embark-basic/</guid>
+        
+        <category>embark</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>【IPFS + 区块链 系列】 入门篇 - IPFS + Ethereum （下篇）-ipfs + Ethereum 大图片存储</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://liyuechun.org&quot;&gt;区块链技术博客：http://liyuechun.org&lt;/a&gt;
+&lt;a href=&quot;http://www.kongyixueyuan.com&quot;&gt;区块链视频网站：http://www.kongyixueyuan.com&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;ebay项目&quot;&gt;Ebay项目&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;基于以太坊Ethereum &amp;amp; IPFS的去中心化Ebay区块链项目&lt;a href=&quot;https://mp.weixin.qq.com/s/feY21MxV_-LuWogPW6qqWA&quot;&gt;详情链接&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/ipfs-http.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;目录&quot;&gt;目录&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-系列文章&quot;&gt;1. 系列文章&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-项目描述及效果展示&quot;&gt;2. 项目描述及效果展示&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-阅读本文需要掌握的知识&quot;&gt;3. 阅读本文需要掌握的知识&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-源码&quot;&gt;4. 源码&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-运行程序&quot;&gt;5. 运行程序&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6-技术交流&quot;&gt;6. 技术交流&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;1-系列文章&quot;&gt;1. 系列文章&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://liyuechun.org/2017/11/20/ipfs-blockchain/&quot;&gt;【IPFS + 区块链 系列】 入门篇 - IPFS环境配置&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://liyuechun.org/2017/11/21/ipfs-blockchain-blogger/&quot;&gt;【IPFS + 区块链 系列】 入门篇 - IPFS+IPNS+个人博客搭建&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://liyuechun.org/2017/11/22/ipfs-api/&quot;&gt;【IPFS + 区块链 系列】 入门篇 - IPFS + Ethereum （上篇）-js-ipfs-api - 数据上传到IPFS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://liyuechun.org/2017/11/26/ipfs-upload-image/&quot;&gt;【IPFS + 区块链 系列】 入门篇 - IPFS + Ethereum （中篇）-js-ipfs-api - 图片上传到IPFS以及下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-项目描述及效果展示&quot;&gt;2. 项目描述及效果展示&lt;/h2&gt;
+
+&lt;p&gt;这篇文章通过&lt;code class=&quot;highlighter-rouge&quot;&gt;truffle unbox react&lt;/code&gt;创建项目，安装&lt;code class=&quot;highlighter-rouge&quot;&gt;ipfs-api&lt;/code&gt;，将图片存储到&lt;code class=&quot;highlighter-rouge&quot;&gt;ipfs&lt;/code&gt;，将图片&lt;code class=&quot;highlighter-rouge&quot;&gt;hash&lt;/code&gt;存储到&lt;code class=&quot;highlighter-rouge&quot;&gt;Ethereum&lt;/code&gt;区块链，取数据时先从区块链读取图片&lt;code class=&quot;highlighter-rouge&quot;&gt;hash&lt;/code&gt;，再通过&lt;code class=&quot;highlighter-rouge&quot;&gt;hash&lt;/code&gt;从&lt;code class=&quot;highlighter-rouge&quot;&gt;ipfs&lt;/code&gt;读取数据，解决了区块链大数据存储成本高昂的问题。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/ipfs-ether-image-0001gif.gif&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/ipfs-ether-image--0002.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-阅读本文需要掌握的知识&quot;&gt;3. 阅读本文需要掌握的知识&lt;/h2&gt;
+
+&lt;p&gt;阅读本文需要将先学习上面的系列文章，由于本文前端使用了大量的React语法，所以建议学习一些&lt;a href=&quot;http://edu.csdn.net/course/play/4749&quot;&gt;React语法&lt;/a&gt;，还需要学习&lt;a href=&quot;http://truffleframework.com/&quot;&gt;truffle framework&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;4-源码&quot;&gt;4. 源码&lt;/h2&gt;
+
+&lt;p&gt;其实这篇文章的内容就是上面几篇文章的综合结合体，所以在这里我将不再对代码做过多的概述。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React, {Component} from 'react'
+import SimpleStorageContract from '../build/contracts/SimpleStorage.json'
+import getWeb3 from './utils/getWeb3'
+
+import './css/oswald.css'
+import './css/open-sans.css'
+import './css/pure-min.css'
+import './App.css'
+
+const ipfsAPI = require('ipfs-api');
+const ipfs = ipfsAPI({host: 'localhost', port: '5001', protocol: 'http'});
+
+const contract = require('truffle-contract')
+const simpleStorage = contract(SimpleStorageContract)
+let account;
+
+// Declaring this for later so we can chain functions on SimpleStorage.
+let contractInstance;
+
+let saveImageOnIpfs = (reader) =&amp;gt; {
+  return new Promise(function(resolve, reject) {
+    const buffer = Buffer.from(reader.result);
+    ipfs.add(buffer).then((response) =&amp;gt; {
+      console.log(response)
+      resolve(response[0].hash);
+    }).catch((err) =&amp;gt; {
+      console.error(err)
+      reject(err);
+    })
+  })
+}
+
+class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      blockChainHash: null,
+      web3: null,
+      address: null,
+      imgHash: null,
+      isWriteSuccess: false
+    }
+  }
+
+  componentWillMount() {
+
+    ipfs.swarm.peers(function(err, res) {
+      if (err) {
+        console.error(err);
+      } else {
+        // var numPeers = res.Peers === null ? 0 : res.Peers.length;
+        // console.log(&quot;IPFS - connected to &quot; + numPeers + &quot; peers&quot;);
+        console.log(res);
+      }
+    });
+
+    getWeb3.then(results =&amp;gt; {
+      this.setState({web3: results.web3})
+
+      // Instantiate contract once web3 provided.
+      this.instantiateContract()
+    }).catch(() =&amp;gt; {
+      console.log('Error finding web3.')
+    })
+  }
+
+  instantiateContract = () =&amp;gt; {
+
+    simpleStorage.setProvider(this.state.web3.currentProvider);
+    this.state.web3.eth.getAccounts((error, accounts) =&amp;gt; {
+      account = accounts[0];
+      simpleStorage.at('0x66e9bbfe244799149a9c4eb708a34ea7c9ce67e2').then((contract) =&amp;gt; {
+        console.log(contract.address);
+        contractInstance = contract;
+        this.setState({address: contractInstance.address});
+        return;
+      });
+    })
+
+  }
+  render() {
+    return (&amp;lt;div className=&quot;App&quot;&amp;gt;
+      {
+        this.state.address
+          ? &amp;lt;h1&amp;gt;合约地址：{this.state.address}&amp;lt;/h1&amp;gt;
+          : &amp;lt;div/&amp;gt;
+      }
+      &amp;lt;h2&amp;gt;上传图片到IPFS：&amp;lt;/h2&amp;gt;
+      &amp;lt;div&amp;gt;
+        &amp;lt;label id=&quot;file&quot;&amp;gt;Choose file to upload&amp;lt;/label&amp;gt;
+        &amp;lt;input type=&quot;file&quot; ref=&quot;file&quot; id=&quot;file&quot; name=&quot;file&quot; multiple=&quot;multiple&quot;/&amp;gt;
+      &amp;lt;/div&amp;gt;
+      &amp;lt;div&amp;gt;
+        &amp;lt;button onClick={() =&amp;gt; {
+            var file = this.refs.file.files[0];
+            var reader = new FileReader();
+            // reader.readAsDataURL(file);
+            reader.readAsArrayBuffer(file)
+            reader.onloadend = function(e) {
+              console.log(reader);
+              saveImageOnIpfs(reader).then((hash) =&amp;gt; {
+                console.log(hash);
+                this.setState({imgHash: hash})
+              });
+
+            }.bind(this);
+
+          }}&amp;gt;将图片上传到IPFS并返回图片HASH&amp;lt;/button&amp;gt;
+      &amp;lt;/div&amp;gt;
+      {
+        this.state.imgHash
+          ? &amp;lt;div&amp;gt;
+              &amp;lt;h2&amp;gt;imgHash：{this.state.imgHash}&amp;lt;/h2&amp;gt;
+              &amp;lt;button onClick={() =&amp;gt; {
+                  contractInstance.set(this.state.imgHash, {from: account}).then(() =&amp;gt; {
+                    console.log('图片的hash已经写入到区块链！');
+                    this.setState({isWriteSuccess: true});
+                  })
+                }}&amp;gt;将图片hash写到区块链：contractInstance.set(imgHash)&amp;lt;/button&amp;gt;
+            &amp;lt;/div&amp;gt;
+          : &amp;lt;div/&amp;gt;
+      }
+      {
+        this.state.isWriteSuccess
+          ? &amp;lt;div&amp;gt;
+              &amp;lt;h1&amp;gt;图片的hash已经写入到区块链！&amp;lt;/h1&amp;gt;
+              &amp;lt;button onClick={() =&amp;gt; {
+                  contractInstance.get({from: account}).then((data) =&amp;gt; {
+                    console.log(data);
+                    this.setState({blockChainHash: data});
+                  })
+                }}&amp;gt;从区块链读取图片hash：contractInstance.get()&amp;lt;/button&amp;gt;
+            &amp;lt;/div&amp;gt;
+          : &amp;lt;div/&amp;gt;
+      }
+      {
+        this.state.blockChainHash
+          ? &amp;lt;div&amp;gt;
+              &amp;lt;h3&amp;gt;从区块链读取到的hash值：{this.state.blockChainHash}&amp;lt;/h3&amp;gt;
+            &amp;lt;/div&amp;gt;
+          : &amp;lt;div/&amp;gt;
+      }
+      {
+        this.state.blockChainHash
+          ? &amp;lt;div&amp;gt;
+              &amp;lt;h2&amp;gt;浏览器访问：{&quot;http://localhost:8080/ipfs/&quot; + this.state.imgHash}&amp;lt;/h2&amp;gt;
+              &amp;lt;img alt=&quot;&quot; style= src={&quot;http://localhost:8080/ipfs/&quot; + this.state.imgHash}/&amp;gt;
+            &amp;lt;/div&amp;gt;
+          : &amp;lt;img alt=&quot;&quot;/&amp;gt;
+      }
+    &amp;lt;/div&amp;gt;);
+  }
+}
+
+export default App
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;5-运行程序&quot;&gt;5. 运行程序&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;项目下载&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/liyuechun/IPFS-Ethereum-Image.git
+$ cd IPFS-Ethereum-Image
+$ npm install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;运行程序&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ipfs daemon // 终端一
+$ npm start   // 终端二
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;6-技术交流&quot;&gt;6. 技术交流&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;区块链技术交流QQ群：&lt;code class=&quot;highlighter-rouge&quot;&gt;348924182&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;进微信群请加微信：&lt;code class=&quot;highlighter-rouge&quot;&gt;liyc1215&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;「区块链部落」官方公众号&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://om1c35wrq.bkt.clouddn.com/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%83%A8%E8%90%BD.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 26 Nov 2017 00:00:00 +0800</pubDate>
+        <link>http://liyuechun.org/2017/11/26/ipfs-ethereum-image/</link>
+        <guid isPermaLink="true">http://liyuechun.org/2017/11/26/ipfs-ethereum-image/</guid>
+        
+        <category>IPFS+区块链</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
